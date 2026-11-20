@@ -1,0 +1,2206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>에너지공학(Energy Engineering) 주제 가이드 - 경북대학교 도서관 Research Guides</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Noto Sans KR & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lib: {
+              crimson: '#990000',
+              crimsonDark: '#7A0000',
+              boxHeader: '#F2F2F2',
+              border: '#CCCCCC',
+              borderLight: '#DDDDDD',
+              text: '#222222',
+              muted: '#555555',
+              link: '#1D4ED8'
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans KR"', 'Inter', 'Arial', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Classic Springshare LibGuides Restrained Styling */
+    body {
+      font-family: 'Noto Sans KR', 'Inter', Arial, sans-serif;
+      background-color: #FFFFFF;
+      color: #222222;
+      font-size: 14px;
+      line-height: 1.65;
+      scroll-behavior: smooth;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Classic s-lib-box */
+    .s-lib-box {
+      background-color: #FFFFFF;
+      border: 1px solid #CCCCCC;
+      border-radius: 2px;
+      margin-bottom: 18px;
+    }
+    .s-lib-box-title {
+      background-color: #F2F2F2;
+      border-bottom: 1px solid #CCCCCC;
+      padding: 8px 14px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #222222;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .s-lib-box-content {
+      padding: 14px 16px;
+    }
+    /* Classic Springshare Nav Tabs */
+    .lib-nav-tabs {
+      border-bottom: 1px solid #CCCCCC;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 3px;
+    }
+    .lib-tab-btn {
+      background-color: #F5F5F5;
+      border: 1px solid #DDDDDD;
+      border-bottom: none;
+      border-radius: 2px 2px 0 0;
+      padding: 8px 14px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #333333;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+    .lib-tab-btn:hover {
+      background-color: #EAEAEA;
+      color: #990000;
+    }
+    .lib-tab-btn.active {
+      background-color: #FFFFFF;
+      border-color: #CCCCCC;
+      border-top: 3px solid #990000;
+      color: #222222;
+      font-weight: 700;
+      margin-bottom: -1px;
+      padding-bottom: 9px;
+    }
+    /* Classic Academic Tables */
+    .lib-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    .lib-table th {
+      background-color: #F5F5F5;
+      border: 1px solid #DDDDDD;
+      padding: 8px 10px;
+      font-weight: 700;
+      color: #222222;
+      text-align: left;
+    }
+    .lib-table td {
+      border: 1px solid #DDDDDD;
+      padding: 8px 10px;
+      color: #222222;
+      vertical-align: top;
+    }
+    .lib-table tr:hover td {
+      background-color: #FAFAFA;
+    }
+    /* Academic Links */
+    .lib-link {
+      color: #004499;
+      text-decoration: none;
+    }
+    .lib-link:hover {
+      color: #990000;
+      text-decoration: underline;
+    }
+    /* Details Expandable Styling */
+    details summary {
+      cursor: pointer;
+      user-select: none;
+    }
+    details summary:hover {
+      color: #990000;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-white text-[#222222]">
+
+  <!-- Restrained Toast Notification (Replaces alert) -->
+  <div id="toast" class="fixed bottom-4 right-4 z-50 hidden">
+    <div class="bg-[#222222] text-white px-3.5 py-2 rounded-[2px] border border-[#444444] text-xs font-medium shadow-sm flex items-center gap-2">
+      <i class="fa-solid fa-check text-emerald-400"></i>
+      <span id="toast-msg">클립보드에 복사되었습니다.</span>
+    </div>
+  </div>
+
+  <!-- 1. Top Institutional Utility Bar (USC / KNU LibGuides Style) -->
+  <div class="bg-lib-crimson text-white text-xs border-b border-lib-crimsonDark">
+    <div class="max-w-[1170px] mx-auto px-4 py-1.5 flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-2 font-medium tracking-tight">
+        <a href="https://www.knu.ac.kr" target="_blank" rel="noopener noreferrer" class="hover:underline">경북대학교</a>
+        <span class="text-white/50">|</span>
+        <a href="https://kudos.knu.ac.kr/" target="_blank" rel="noopener noreferrer" class="hover:underline">도서관 홈 (KUDOS)</a>
+        <span class="text-white/50">|</span>
+        <a href="https://libguides.knu.ac.kr/c.php?g=808458&p=6781390" target="_blank" rel="noopener noreferrer" class="hover:underline">주제 가이드</a>
+      </div>
+      <div class="flex items-center gap-3 text-[11px] text-white/90">
+        <a href="https://home.knu.ac.kr/HOME/soee/sub.htm?nav_code=soe1622693389" target="_blank" rel="noopener noreferrer" class="hover:underline">경북대 에너지공학부</a>
+        <span class="text-white/50">|</span>
+        <a href="https://kudos.knu.ac.kr/" target="_blank" rel="noopener noreferrer" class="hover:underline">연구지원 · 표절예방</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Clean White Library Banner & Guide Title Header -->
+  <header class="bg-white border-b border-[#E5E5E5]">
+    <div class="max-w-[1170px] mx-auto px-4 pt-4 pb-3">
+      <!-- Library Identity Line -->
+      <div class="flex flex-wrap items-baseline justify-between gap-2 pb-3 border-b border-[#EEEEEE]">
+        <div class="flex items-baseline gap-2.5">
+          <span class="text-base sm:text-lg font-bold text-lib-crimson tracking-tight">경북대학교 도서관</span>
+          <span class="text-xs sm:text-sm text-[#666666] font-normal">KNU Library Research Guides</span>
+        </div>
+        <span class="text-xs text-[#666666]">학술정보지원 · 공학 주제별 연구 가이드</span>
+      </div>
+
+      <!-- Breadcrumb -->
+      <nav class="text-xs text-[#666666] mt-2.5 mb-2 flex flex-wrap items-center gap-1.5" aria-label="Breadcrumb">
+        <a href="https://kudos.knu.ac.kr/" target="_blank" rel="noopener noreferrer" class="lib-link">경북대학교 도서관</a>
+        <span>/</span>
+        <span>주제 가이드 (Research Guides)</span>
+        <span>/</span>
+        <span>공학 (Engineering)</span>
+        <span>/</span>
+        <span class="text-[#222222] font-medium">에너지공학 (Energy Engineering)</span>
+      </nav>
+
+      <!-- Guide Title + Compact Inline Search Box -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 mt-1">
+        <div>
+          <h1 class="text-xl sm:text-2xl font-bold text-[#222222] tracking-tight">
+            에너지공학(Energy Engineering) 주제 가이드
+          </h1>
+          <p class="text-xs text-[#555555] mt-1">
+            최종 업데이트: 2026년 11월 &nbsp;|&nbsp; 주제 분류: 에너지공학, 신재생에너지, 수소에너지, 원자력, 에너지저장, 연구윤리, 학술통계
+          </p>
+        </div>
+
+        <!-- Compact Classic Search Input -->
+        <div class="w-full md:w-72">
+          <div class="flex items-center border border-[#CCCCCC] rounded-[2px] bg-white focus-within:border-[#666666]">
+            <input
+              type="text"
+              id="global-search"
+              placeholder="가이드 내 키워드 검색..."
+              class="w-full px-2.5 py-1.5 text-xs text-[#222222] placeholder-[#777777] focus:outline-none"
+            />
+            <button id="clear-search" class="hidden px-2 text-xs text-[#666666] hover:text-[#222222]" title="초기화">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="px-2.5 py-1.5 bg-[#F5F5F5] border-l border-[#CCCCCC] text-xs text-[#444444]">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Status Indicator -->
+      <div id="search-status" class="hidden mt-2 px-3 py-1.5 bg-[#F8F9FA] border border-[#DDDDDD] text-xs text-[#333333] flex items-center justify-between">
+        <span id="search-status-text"></span>
+        <button onclick="resetSearch()" class="text-lib-crimson hover:underline font-medium">검색 닫기</button>
+      </div>
+    </div>
+
+    <!-- 3. Classic Horizontal Springshare Tab Navigation -->
+    <div class="max-w-[1170px] mx-auto px-4 pt-1">
+      <div class="lib-nav-tabs no-scrollbar" role="tablist" aria-label="주제가이드 메뉴 탭">
+        <button onclick="switchTab('tab-home')" data-tab="tab-home" class="lib-tab-btn active">
+          홈 / 주제 개요
+        </button>
+        <button onclick="switchTab('tab-journals')" data-tab="tab-journals" class="lib-tab-btn">
+          핵심 전자저널 (7종)
+        </button>
+        <button onclick="switchTab('tab-databases')" data-tab="tab-databases" class="lib-tab-btn">
+          학술 DB & 서지관리도구
+        </button>
+        <button onclick="switchTab('tab-oa')" data-tab="tab-oa" class="lib-tab-btn">
+          오픈액세스(OA) & CCL
+        </button>
+        <button onclick="switchTab('tab-citation')" data-tab="tab-citation" class="lib-tab-btn">
+          인용 양식 & 연구윤리·AI
+        </button>
+        <button onclick="switchTab('tab-videos')" data-tab="tab-videos" class="lib-tab-btn">
+          추천 학습 영상 (5선)
+        </button>
+        <button onclick="switchTab('tab-orgs')" data-tab="tab-orgs" class="lib-tab-btn">
+          학회·워크샵·연구기관·통계
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 4. Main Workspace (Classic Asymmetric 2-Column LibGuides Grid: ~74% Main / ~26% Sidebar) -->
+  <main class="flex-1 max-w-[1170px] w-full mx-auto px-4 py-5">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+
+      <!-- Left/Main Column (9 of 12 cols = 75%) -->
+      <div class="lg:col-span-9" id="main-content-area">
+
+        <!-- ========================================================= -->
+        <!-- TAB 1: 홈 / 주제 개요 (Home & Overview)                     -->
+        <!-- ========================================================= -->
+        <section id="tab-home" class="tab-panel">
+
+          <!-- Box 1: 에너지공학(Energy Engineering)이란? -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>1. 에너지공학(Energy Engineering)이란?</span>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <!-- Restrained Visual Reference Figure (Solar & Wind) -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pb-1">
+                <div class="border border-[#DDDDDD] bg-[#F8F9FA] p-3 flex items-start gap-3">
+                  <i class="fa-solid fa-solar-panel text-lg text-lib-crimson mt-0.5"></i>
+                  <div>
+                    <div class="font-bold text-[13.5px] text-[#222222]">신재생에너지 복합 발전 시스템</div>
+                    <p class="text-xs text-[#555555] mt-0.5">태양광·풍력 발전 효율 극대화 및 스마트그리드·전력계통 연계 연구</p>
+                  </div>
+                </div>
+                <div class="border border-[#DDDDDD] bg-[#F8F9FA] p-3 flex items-start gap-3">
+                  <i class="fa-solid fa-battery-three-quarters text-lg text-lib-crimson mt-0.5"></i>
+                  <div>
+                    <div class="font-bold text-[13.5px] text-[#222222]">수소에너지 · ESS · 차세대 배터리</div>
+                    <p class="text-xs text-[#555555] mt-0.5">탄소중립(Net-Zero) 실현을 위한 고효율 에너지 변환 및 저장 기술</p>
+                  </div>
+                </div>
+              </div>
+
+              <p>
+                <strong>에너지공학(Energy Engineering)</strong>은 에너지의 <strong>생산, 변환, 저장, 전달 및 효율적인 활용</strong>에 필요한 과학적 원리와 공학 기술을 연구하는 학문 분야이다. 기계공학, 전기공학, 화학공학, 재료공학, 환경공학 등 다양한 분야와 융합하여 에너지 시스템의 성능을 향상시키고 지속 가능한 에너지 기술을 개발하는 것을 주요 목표로 한다.
+              </p>
+              <p>
+                최근 기후변화와 탄소중립에 대한 관심이 높아지고 에너지 수요가 증가하면서 친환경적이고 효율적인 에너지 기술의 중요성이 더욱 커지고 있다. 이에 따라 태양광, 풍력, 수력 등 신재생에너지의 개발뿐만 아니라 수소에너지, 연료전지, 차세대 배터리, 에너지저장장치(ESS), 스마트그리드 등 다양한 분야에서 활발한 연구가 진행되고 있다.
+              </p>
+            </div>
+          </div>
+
+          <!-- Box 2: 에너지공학의 주요 연구 분야 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>2. 에너지공학의 주요 연구 분야</span>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <p>
+                에너지공학은 <strong>신재생에너지, 수소에너지, 원자력 에너지, 에너지 저장</strong> 등으로 구분된다. 각 분야에서는 에너지 생산의 효율성을 높이고 안정적인 에너지 공급 체계를 구축하며, 에너지 사용 과정에서 발생하는 환경적 영향을 줄이기 위한 연구를 수행한다.
+              </p>
+              <table class="lib-table">
+                <thead>
+                  <tr>
+                    <th class="w-44">세부 연구 분야</th>
+                    <th>주요 연구 내용 및 핵심 기술</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-bold">신재생에너지<br><span class="text-xs font-normal text-[#555555]">(Renewable Energy)</span></td>
+                    <td>태양광(PV), 풍력, 수력, 바이오에너지, 열에너지, 해양에너지 발전 및 전력망 통합·스마트그리드 운영</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">수소에너지<br><span class="text-xs font-normal text-[#555555]">(Hydrogen Energy)</span></td>
+                    <td>수전해 기반 청정 수소 생산, 수소 저장·수송(암모니아·메탄 등 수소 운반체), 연료전지(PEMFC·SOFC) 응용</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">원자력 에너지<br><span class="text-xs font-normal text-[#555555]">(Nuclear Energy)</span></td>
+                    <td>원자로 물리, 열수력, 원자력 안전, 방사성폐기물 관리, 차세대 원자로 및 핵융합·방사선 응용 기술</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">에너지 저장<br><span class="text-xs font-normal text-[#555555]">(Energy Storage)</span></td>
+                    <td>리튬이온 및 전고체 차세대 배터리, 대용량 에너지저장장치(ESS), 탄소 포집·활용·저장(CCUS)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Box 3: 주제의 중요성 & 최신 연구 동향 논문 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>3. 주제의 중요성 및 최신 연구 동향</span>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <p>
+                에너지공학은 미래 산업 발전과 환경 문제 해결에 핵심적인 역할을 하는 학문이다. 특히 <strong>탄소중립 실현, 에너지 자원의 안정적인 확보, 전력 수요 증가에 대응</strong>하기 위해 지속 가능한 에너지 기술의 발전이 필수적이다. 따라서 에너지공학 분야의 최신 연구 동향과 핵심 기술을 이해하는 것은 미래 에너지 산업과 관련 기술의 발전 방향을 파악하는 데 중요한 의미가 있다.
+              </p>
+
+              <div class="border-l-[3px] border-lib-crimson bg-[#F8F9FA] p-3.5 mt-3">
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <span class="text-xs font-bold text-[#222222]">▶ Energy & Fuels: Latest Articles (ACS Publications) 예시</span>
+                  <button onclick="copyTextById('latest-paper-cite')" class="text-xs text-lib-link hover:underline">[서지정보 복사]</button>
+                </div>
+                <p id="latest-paper-cite" class="font-mono text-xs text-[#222222] leading-relaxed">
+                  M. N. Eliyas, N. K. Gautam, S. U. Islam, F. Ahmed, Z. H. Khan, and S. Kumar, "Review and Outlook on Biomass-Derived Carbon Materials and Their Functional Composites with 2D Materials for Sustainable Energy Storage Applications," <em>Energy Fuels</em>, vol. 40, no. 45, pp. 24469-24497, Nov. 2026, doi: 10.1021/acs.energyfuels.6c02570.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 4: 가이드 자료 출처 및 참고문헌 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>4. 가이드 자료 출처 및 참고문헌 (References)</span>
+            </div>
+            <div class="s-lib-box-content text-xs sm:text-[13px] space-y-3">
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">■ 대학 도서관 및 강의 자료</h4>
+                <ul class="list-disc pl-5 space-y-1 text-[#333333]">
+                  <li>경북대학교 도서관 (n.d.). 에너지공학부 주제가이드: <a href="https://libguides.knu.ac.kr/c.php?g=808458&p=6781390" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://libguides.knu.ac.kr/c.php?g=808458&p=6781390</a></li>
+                  <li>경북대학교 에너지공학부: <a href="https://home.knu.ac.kr/HOME/soee/sub.htm?nav_code=soe1622693389" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://home.knu.ac.kr/HOME/soee/sub.htm?nav_code=soe1622693389</a></li>
+                  <li>경북대학교 도서관 (n.d.). 연구지원 및 표절예방(CopyKiller·Turnitin) 안내: <a href="https://kudos.knu.ac.kr/" target="_blank" rel="noopener noreferrer" class="lib-link">https://kudos.knu.ac.kr/</a></li>
+                  <li>강의자료 PPT 및 각 저널·발행사 공식 사이트 페이지(소개, 이용 방법, 도움말 등)</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">■ 학술 데이터베이스 · 저널 · 인용 및 연구윤리 참고문헌</h4>
+                <ul class="list-disc pl-5 space-y-1 text-[#333333]">
+                  <li>Clarivate (n.d.). Web of Science. <a href="https://clarivate.com/academia-government/ko/scientific-and-academic-research/research-discovery-and-referencing/web-of-science/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://clarivate.com/academia-government/ko/scientific-and-academic-research/research-discovery-and-referencing/web-of-science/</a></li>
+                  <li>Elsevier (n.d.). Scopus / ScienceDirect / Engineering Village / Tutorial text: Browsing journals. <a href="https://www.elsevier.com/products/sciencedirect" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.elsevier.com/products/sciencedirect</a></li>
+                  <li>Springer Nature (n.d.). Journal information: Nature Energy. <a href="https://www.nature.com/nenergy/about" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.nature.com/nenergy/about</a></li>
+                  <li>The Korean Society for New and Renewable Energy (n.d.). New &amp; Renewable Energy. <a href="https://journalksnre.com/main.php" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://journalksnre.com/main.php</a></li>
+                  <li>Wiley (n.d.). Progress in Photovoltaics: Research and Applications: Overview. <a href="https://onlinelibrary.wiley.com/page/journal/1099159x/homepage/productinformation.html" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://onlinelibrary.wiley.com/page/journal/1099159x/homepage/productinformation.html</a></li>
+                  <li>European Academy of Wind Energy (n.d.). Journal of wind energy science. <a href="https://eawe.eu/journal-of-wind-energy-science/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://eawe.eu/journal-of-wind-energy-science/</a></li>
+                  <li>Directory of Open Access Journals (n.d.). Nuclear Engineering and Technology. <a href="https://www.doaj.org/toc/1738-5733" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.doaj.org/toc/1738-5733</a></li>
+                  <li>International Energy Agency (2026). <em>Energy technology perspectives</em>. <a href="https://www.iea.org/reports/energy-technology-perspectives-2026" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.iea.org/reports/energy-technology-perspectives-2026</a></li>
+                  <li>International Atomic Energy Agency (IAEA), International Nuclear Information System (INIS). <a href="https://www.iaea.org/resources/databases/inis" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.iaea.org/resources/databases/inis</a></li>
+                  <li>OSTI.GOV (n.d.). About the DOE Office of Scientific and Technical Information (OSTI). <a href="https://www.osti.gov/about" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.osti.gov/about</a></li>
+                  <li>IEEE Author Center (n.d.). <em>IEEE reference guide</em>. <a href="https://journals.ieeeauthorcenter.ieee.org/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://journals.ieeeauthorcenter.ieee.org/</a></li>
+                  <li>Purdue Online Writing Lab (OWL) &amp; American Psychological Association (APA). <em>APA formatting and style guide (7th edition) &amp; How to cite ChatGPT</em>. <a href="https://apastyle.apa.org/blog/how-to-cite-chatgpt" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://apastyle.apa.org/blog/how-to-cite-chatgpt</a></li>
+                  <li>국가과학기술인력개발원 (KIRD). (n.d.). 연구윤리정보포털 (CRE). <a href="https://www.cre.re.kr/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.cre.re.kr/</a></li>
+                </ul>
+              </div>
+
+              <!-- 신규 출처 및 참고문헌 추가 영역 -->
+              <div class="border-t border-[#DDDDDD] pt-2">
+                <h4 class="font-bold text-[#222222] mb-1">■ 학회 · 워크숍 · 연구기관 및 국내외 통계·참고정보원 추가 출처</h4>
+                <ul class="list-disc pl-5 space-y-1 text-[#333333]">
+                  <li>ICAE2026 18th International Conference on Applied Energy. (n.d.). <a href="https://applied-energy.org/icae2026/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://applied-energy.org/icae2026/</a></li>
+                  <li>Energy Systems Integration Group (ESIG). (n.d.). Workshops &amp; Events. <a href="https://www.esig.energy/events-all/category/workshops/list/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.esig.energy/events-all/category/workshops/list/</a></li>
+                  <li>Wind &amp; Solar Integration Workshop. (n.d.). 2026 Wind &amp; Solar Integration Workshop Porto. <a href="https://windintegrationworkshop.org" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://windintegrationworkshop.org</a></li>
+                  <li>International Energy Workshop (IEW). Official Website. <a href="https://www.internationalenergyworkshop.org/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.internationalenergyworkshop.org/</a></li>
+                  <li>International Energy Agency (IEA). Data and Statistics &amp; Energy Statistics Data Browser. <a href="https://www.iea.org/data-and-statistics" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.iea.org/data-and-statistics</a></li>
+                  <li>International Energy Agency (IEA). 26th Annual IEA-IETA-EPRI Workshop on Greenhouse Gas Emissions Trading. <a href="https://www.iea.org/events/26th-annual-iea-ieta-epri-workshop-on-greenhouse-gas-emissions-trading" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.iea.org/events/26th-annual-iea-ieta-epri-workshop-on-greenhouse-gas-emissions-trading</a></li>
+                  <li>International Renewable Energy Agency (IRENA). Renewable Energy Statistics and Data. <a href="https://www.irena.org/Data" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.irena.org/Data</a></li>
+                  <li>International Association for Energy Economics (IAEE). About &amp; Publications. <a href="https://iaee.org/publications" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://iaee.org/publications</a></li>
+                  <li>IEEE Power &amp; Energy Society (IEEE PES). About &amp; Publications. <a href="https://ieee-pes.org/publications/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://ieee-pes.org/publications/</a></li>
+                  <li>National Institute of Advanced Industrial Science and Technology (AIST). Official Website &amp; Research Results. <a href="https://www.aist.go.jp/aist_e/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.aist.go.jp/aist_e/</a></li>
+                  <li>Fraunhofer Institute for Solar Energy Systems (Fraunhofer ISE). Business Areas &amp; Publications. <a href="https://www.ise.fraunhofer.de/en/publications.html" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.ise.fraunhofer.de/en/publications.html</a></li>
+                  <li>한국신·재생에너지학회. (n.d.). 2026년 춘계학술대회 및 학회 안내. <a href="http://www.ksnre.or.kr" target="_blank" rel="noopener noreferrer" class="lib-link break-all">http://www.ksnre.or.kr</a></li>
+                  <li>한국에너지학회. 공식 홈페이지 및 학술논문 검색. <a href="https://www.koes.or.kr" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.koes.or.kr</a></li>
+                  <li>한국수소및신에너지학회. 공식 홈페이지 및 학술행사 안내. <a href="https://hydrogen.or.kr/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://hydrogen.or.kr/</a></li>
+                  <li>대한전기학회. 산업전기응용부문회 춘계 기술위원회 워크숍 안내. <a href="https://www.kiee.or.kr/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.kiee.or.kr/</a></li>
+                  <li>한국에너지기술연구원(KIER). 공식 홈페이지. <a href="https://www.kier.re.kr/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.kier.re.kr/</a></li>
+                  <li>한국전기연구원(KERI). 공식 홈페이지. <a href="https://www.keri.re.kr/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.keri.re.kr/</a></li>
+                  <li>국가에너지통계종합정보시스템(KESIS) &amp; 한국에너지경제연구원(KEEI). <a href="https://kesis.keei.re.kr" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://kesis.keei.re.kr</a></li>
+                  <li>국가과학기술지식정보서비스(NTIS). 공식 홈페이지. <a href="https://www.ntis.go.kr/" target="_blank" rel="noopener noreferrer" class="lib-link break-all">https://www.ntis.go.kr/</a></li>
+                  <li>한국학술정보(KISS) &amp; Elsevier·Clarivate·OSTI.GOV 공식 검색 도움말 문서.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 2: 핵심 전자저널 (Core Electronic Journals - 7종)      -->
+        <!-- ========================================================= -->
+        <section id="tab-journals" class="tab-panel hidden">
+
+          <!-- Box: 전자저널 개요 및 선정 기준 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>전자저널(Electronic Journal)의 이해 및 선정 기준</span>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <div class="bg-[#F8F9FA] border border-[#DDDDDD] p-3.5">
+                <p class="font-bold text-[#222222] mb-1">■ 전자저널(= Electronic journal, Online journals, digital journals)이란?</p>
+                <p>연속간행물(종간을 예정하지 않고 (부)정기적으로 권호, 연월일순으로 계속 간행되는 출판물)의 디지털 형태로, 전자적 방식으로 생산·배포 및 열람이 가능하게 만든 저널로 전자매체로 생산되고 온라인상에서 이용 가능하며 저널의 원문을 제공한다. 이 중 연구 분야에서는 학술지 저널(특정 학문 분야의 연구 성과를 지속적으로 발표)에 가장 중점을 둔다.</p>
+                <p class="mt-1.5 text-xs text-lib-crimson font-medium">* 본 가이드에는 경북대학교 도서관 사이트에서 검색 및 접근이 가능한 저널들만 기재하였다.</p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1.5">■ 저널 선정 4대 기준</h4>
+                <ul class="list-disc pl-5 space-y-1 text-[#333333]">
+                  <li><strong>학술적 신뢰성·권위:</strong> 학회 공식 학술지 또는 대형 학술 출판사의 SCIE 등재 저널, 피어리뷰 운영 여부</li>
+                  <li><strong>분야 적합성·최신성:</strong> 태양광·풍력·수소·원자력 등 세부 분야를 고르게 포함하고 최근 발행이 활발한지 여부</li>
+                  <li><strong>이용 편의성:</strong> 검색·알림·인용 내보내기 등 기술적 기능과 기기 호환</li>
+                  <li><strong>영향력·접근성:</strong> 인용지수(JIF), KCI 등재, OA 여부, 라이선스 관련 사항</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 0: 전자저널 모음 비교표 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>0. 에너지공학 핵심 전자저널 모음 (7종)</span>
+              <span class="text-xs font-normal text-[#555555]">저널명 클릭 시 상세 이용 안내로 이동</span>
+            </div>
+            <div class="s-lib-box-content">
+              <div class="overflow-x-auto">
+                <table class="lib-table">
+                  <thead>
+                    <tr>
+                      <th class="w-10 text-center">No.</th>
+                      <th>저널</th>
+                      <th>세부 분야</th>
+                      <th>발행처</th>
+                      <th>접근 형태</th>
+                      <th>지표 (2025)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">1</td>
+                      <td class="font-bold"><a href="#journal-1" onclick="openJournalDetail('journal-1')" class="lib-link">Nature Energy</a></td>
+                      <td>에너지 종합·정책</td>
+                      <td>Springer Nature</td>
+                      <td>구독형(일부 OA)</td>
+                      <td>JIF 70.1</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">2</td>
+                      <td class="font-bold"><a href="#journal-2" onclick="openJournalDetail('journal-2')" class="lib-link">Applied Energy</a></td>
+                      <td>에너지 시스템·응용</td>
+                      <td>Elsevier</td>
+                      <td>하이브리드</td>
+                      <td>JIF 12.2</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">3</td>
+                      <td class="font-bold"><a href="#journal-3" onclick="openJournalDetail('journal-3')" class="lib-link">신재생에너지 (New &amp; Renewable Energy)</a></td>
+                      <td>신재생에너지 종합</td>
+                      <td>한국신·재생에너지학회(국내)</td>
+                      <td>KCI 등재, 완전 OA</td>
+                      <td>KCI IF 0.66</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">4</td>
+                      <td class="font-bold"><a href="#journal-4" onclick="openJournalDetail('journal-4')" class="lib-link">Progress in Photovoltaics</a></td>
+                      <td>태양광</td>
+                      <td>Wiley</td>
+                      <td>구독형</td>
+                      <td>JIF 10.2</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">5</td>
+                      <td class="font-bold"><a href="#journal-5" onclick="openJournalDetail('journal-5')" class="lib-link">Wind Energy Science</a></td>
+                      <td>풍력</td>
+                      <td>EAWE / Copernicus</td>
+                      <td>완전 OA (CC BY 4.0)</td>
+                      <td>JIF 4.2</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">6</td>
+                      <td class="font-bold"><a href="#journal-6" onclick="openJournalDetail('journal-6')" class="lib-link">International Journal of Hydrogen Energy</a></td>
+                      <td>수소</td>
+                      <td>Elsevier (IAHE 공식 학술지)</td>
+                      <td>하이브리드</td>
+                      <td>JIF 9.2</td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">7</td>
+                      <td class="font-bold"><a href="#journal-7" onclick="openJournalDetail('journal-7')" class="lib-link">Nuclear Engineering and Technology</a></td>
+                      <td>원자력</td>
+                      <td>한국원자력학회</td>
+                      <td>완전 OA</td>
+                      <td>JIF 2.9</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Simple Restrained Filter Strip -->
+              <div class="mt-3 pt-2.5 border-t border-[#EEEEEE] flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-bold text-[#444444]">분야 필터:</span>
+                <button onclick="filterJournals('all')" data-filter="all" class="j-filter-btn px-2.5 py-1 border border-[#CCCCCC] bg-[#222222] text-white font-medium">전체 (7)</button>
+                <button onclick="filterJournals('general')" data-filter="general" class="j-filter-btn px-2.5 py-1 border border-[#CCCCCC] bg-[#F5F5F5] text-[#222222]">종합·시스템 (2)</button>
+                <button onclick="filterJournals('renewable')" data-filter="renewable" class="j-filter-btn px-2.5 py-1 border border-[#CCCCCC] bg-[#F5F5F5] text-[#222222]">신재생·태양광·풍력 (3)</button>
+                <button onclick="filterJournals('hydrogen')" data-filter="hydrogen" class="j-filter-btn px-2.5 py-1 border border-[#CCCCCC] bg-[#F5F5F5] text-[#222222]">수소 (1)</button>
+                <button onclick="filterJournals('nuclear')" data-filter="nuclear" class="j-filter-btn px-2.5 py-1 border border-[#CCCCCC] bg-[#F5F5F5] text-[#222222]">원자력 (1)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Journal 1: Nature Energy -->
+          <div id="journal-1" data-category="general" class="journal-card s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>1. Nature Energy (Nat. Energy)</span>
+              <a href="https://www.nature.com/nenergy" target="_blank" rel="noopener noreferrer" class="text-xs font-medium lib-link">
+                저널 홈페이지 바로가기 <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+              </a>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <div class="bg-[#F8F9FA] border border-[#E5E5E5] px-3 py-2 text-xs text-[#333333]">
+                <strong>발행처:</strong> Springer Nature (Nature Portfolio) &nbsp;|&nbsp; <strong>창간:</strong> 2016년 &nbsp;|&nbsp; <strong>발행:</strong> 월 1호, 온라인 전용 &nbsp;|&nbsp; <strong>eISSN:</strong> 2058-7546 &nbsp;|&nbsp; <strong>지표:</strong> 2025 JIF 70.1 / Energy &amp; Fuels 분야 Q1
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">1) 소개</h4>
+                <p>에너지 생산·저장·분배·관리, 에너지 기술 및 정책이 사회에 미치는 영향을 다루는 에너지 분야 저널이다. 전업 전문 편집자 팀이 모든 편집 결정을 내린다. 태양광, 풍력, 원자력, 연료전지, 수소, 바이오에너지, 배터리, 탄소 포집·저장, 에너지 정책·경제·정의, 전력망 등으로 에너지공학 전반을 아우른다. 2025년 게재 논문의 50% 이상이 UN 지속가능발전목표(SDGs)와 관련되어 있다.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">2) 이용 방법</h4>
+                <ol class="space-y-1 text-[#333333] pl-1">
+                  <li>① 저널 홈에서 Research articles, Reviews &amp; Analysis, News &amp; Comment, Current issue, Collections 메뉴로 탐색 가능하다.</li>
+                  <li>② 상단에 View all journals, saved research, search 메뉴가 존재하며, search 메뉴 클릭 시 나타나는 검색창에서 This journal과 All journals 중 범위를 선택하고 주제·키워드·저자로 검색할 수 있다. Advanced search를 통한 세부 검색도 가능하다.</li>
+                  <li>③ Latest Research Articles, Latest Reviews &amp; Analysis 메뉴를 통해 최근 연구 흐름을, News &amp; Comment 메뉴를 통해 최신 이슈를 확인할 수 있다.</li>
+                  <li>④ 상단의 Sign up for alerts, RSS feed로 새 논문 소식을 수신할 수 있다.</li>
+                  <li>⑤ 구독 범위를 벗어난 논문은 구매 안내가 출현하며, 이 경우 학교 도서관 등 타 접속 경로를 이용하거나 상호대차를 신청해야 한다.</li>
+                </ol>
+              </div>
+              <div class="border-t border-[#EEEEEE] pt-2 text-[13.5px]">
+                <strong>3) 활용 방향:</strong> 현 에너지 연구의 큰 흐름을 파악하는 데 적합하다.
+              </div>
+            </div>
+          </div>
+
+          <!-- Journal 2: Applied Energy -->
+          <div id="journal-2" data-category="general" class="journal-card s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>2. Applied Energy</span>
+              <a href="https://www.sciencedirect.com/journal/applied-energy" target="_blank" rel="noopener noreferrer" class="text-xs font-medium lib-link">
+                ScienceDirect 바로가기 <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+              </a>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <div class="bg-[#F8F9FA] border border-[#E5E5E5] px-3 py-2 text-xs text-[#333333]">
+                <strong>발행처:</strong> Elsevier &nbsp;|&nbsp; <strong>창간:</strong> 1975년 &nbsp;|&nbsp; <strong>발행:</strong> 연 24호 &nbsp;|&nbsp; <strong>pISSN:</strong> 0306-2619 / <strong>eISSN:</strong> 1872-9118 &nbsp;|&nbsp; <strong>지표:</strong> 2025 JIF 12.2 (5년 JIF 12.1)
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">1) 소개</h4>
+                <p>에너지 변환·보존, 에너지 자원의 최적 이용, 에너지 공정의 분석·최적화, 다중 에너지 시스템, 환경오염 저감, 탄소중립으로의 공정한 전환 등 에너지 응용 측면에 초점을 둔 저널이다. 재생에너지, 스마트 그리드·마이크로그리드, 에너지 저장, 수소·지속가능 연료, 건물 에너지, 수요반응·예측 모델, 탄소 포집·활용·저장, 에너지 분야 AI 응용, 운송·산업 탈탄소, 에너지 시장·정책 등의 다양한 주제를 다루며, 에너지 정책 및 사용의 환경적, 사회적, 경제적 영향에 대한 연구도 포함되어 있다. 원저논문, 리뷰, 기술평가, 서지 연구, 퍼스펙티브를 게재하며, OA 자매지 <em>Advances in Applied Energy</em>가 존재한다.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">2) 이용 방법 <span class="text-xs font-normal text-[#555555]">(* Elsevier 계열 저널은 ScienceDirect 저널 홈페이지에서 같은 이용 방식을 따름)</span></h4>
+                <ol class="space-y-1 text-[#333333] pl-1">
+                  <li>① 저널 홈 메뉴: 상단 Articles &amp; Issues(Latest issue, All issues, Articles in press, Special issues and article collections), About, Publish 메뉴 및 검색창이 존재한다.</li>
+                  <li>② 저널 정보 확인: About에서 Aims &amp; scope, 편집위원, IF 등의 저널 정보를 열람할 수 있다.</li>
+                  <li>③ Articles in press: 심사를 마쳤지만 아직 호에 배정되지 않은 논문으로, DOI로 인용 가능하다. 최신 연구 동향을 확인할 시 도움이 된다.</li>
+                  <li>④ 검색 결과 필터링: 논문 유형, 출판연도, 권·호, OA 필터를 제공한다.</li>
+                  <li>⑤ 복수 논문 처리: 논문 선택 후 Download PDFs로 한 번에 다운로드, Export citations로 RIS·BibTeX·텍스트 형식의 서지정보를 불러올 수 있으며, Mendeley, RefWorks 저장을 지원한다.</li>
+                  <li>⑥ 알림 설정: 계정 생성 후 저널 홈의 Articles &amp; Issues에서 Set up journal alerts 수신 시 새 호나 새 논문이 나올 때 알림을 수신한다. (Search alerts은 기관·단체 이용자용)</li>
+                  <li>⑦ 리뷰 논문은 논문 유형 필터(Review articles)로, OA로 공개된 논문은 Open access 필터로 따로 모을 수 있다. 자매 OA 저널 <em>Advances in Applied Energy</em>도 함께 찾아보면 도움이 된다.</li>
+                </ol>
+              </div>
+              <div class="border-t border-[#EEEEEE] pt-2 text-[13.5px]">
+                <strong>3) 활용 방향:</strong> 에너지 시스템·모델링·스마트 그리드 연구의 선행 문헌을 찾을 때 고려 순위가 높다.
+              </div>
+            </div>
+          </div>
+
+          <!-- Journal 3: 신재생에너지 -->
+          <div id="journal-3" data-category="renewable" class="journal-card s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>3. 신재생에너지 (New &amp; Renewable Energy)</span>
+              <a href="https://journalksnre.com/main.php" target="_blank" rel="noopener noreferrer" class="text-xs font-medium lib-link">
+                학회지 홈페이지 바로가기 <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+              </a>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <div class="bg-[#F8F9FA] border border-[#E5E5E5] px-3 py-2 text-xs text-[#333333]">
+                <strong>발행처:</strong> 한국신·재생에너지학회(KSNRE) &nbsp;|&nbsp; <strong>창간:</strong> 2005년 &nbsp;|&nbsp; <strong>발행:</strong> 연 4호 &nbsp;|&nbsp; <strong>pISSN:</strong> 1738-3935 / <strong>eISSN:</strong> 2713-9999 &nbsp;|&nbsp; <strong>지표:</strong> KCI 등재 / 2025 KCI IF 0.66 &nbsp;|&nbsp; <strong>라이선스:</strong> 완전 OA(골드)
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">1) 소개</h4>
+                <p>신재생에너지 전 분야를 다루는 국내 학술지이다. 학회 활동 분야는 태양광, 풍력, 수소·연료전지, 바이오, 폐자원, 열에너지, 수력·해양에너지, 에너지정책, 환경·CCUS, 에너지건축, 전력망 통합 및 ICT 등이다.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">2) 이용 방법</h4>
+                <ol class="space-y-1 text-[#333333] pl-1">
+                  <li>① 한국신·재생에너지학회 홈페이지의 간행물 &gt; 학회지 &gt; 신재생에너지를 통해 접근 가능하다.</li>
+                  <li>② 좌측 About this journal, Archives(Online First, Current Issue, Journal Archives, Search for Archives), Instructions for Authors, e-Submission, Manual 메뉴를 통해 각 서비스에 접근 가능하며, 페이지 하단에 Most Read 메뉴가 존재한다.</li>
+                  <li>③ 좌측 상단에 검색창이 존재한다.</li>
+                  <li>④ 논문 DOI를 알면 doi.org에서 바로 접속 가능하다. DOI는 <code class="bg-[#F2F2F2] px-1 border border-[#DDDDDD] text-xs">10.7849/ksnre.연도.번호</code> 형식이다.</li>
+                </ol>
+              </div>
+              <div class="border-t border-[#EEEEEE] pt-2 text-[13.5px]">
+                <strong>3) 활용 방향:</strong> 태양광·풍력·ESS·정책 분야의 한글 선행연구를 조사할 때 사용하며, 국제 저널과 함께 인용 시 연구 배경을 보강할 수 있다. 태양광·풍력 등 신재생 분야의 국내 선행연구와 정책·경제성 연구를 찾기에 용이하다.
+              </div>
+            </div>
+          </div>
+
+          <!-- Journal 4: Progress in Photovoltaics -->
+          <div id="journal-4" data-category="renewable" class="journal-card s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>4. Progress in Photovoltaics</span>
+              <a href="https://onlinelibrary.wiley.com/journal/1099159x" target="_blank" rel="noopener noreferrer" class="text-xs font-medium lib-link">
+                Wiley Online Library 바로가기 <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+              </a>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <div class="bg-[#F8F9FA] border border-[#E5E5E5] px-3 py-2 text-xs text-[#333333]">
+                <strong>발행처:</strong> Wiley &nbsp;|&nbsp; <strong>창간:</strong> 1993년 &nbsp;|&nbsp; <strong>발행:</strong> 월 1호 &nbsp;|&nbsp; <strong>pISSN:</strong> 1062-7995 / <strong>eISSN:</strong> 1099-159X &nbsp;|&nbsp; <strong>지표:</strong> 2025 JIF 10.2
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">1) 소개</h4>
+                <p>태양광 기술 진전을 주로 보고하는 저널이다. 독립 기관이 인증한 태양전지 효율 향상과 같이 의미 있는 성과를 우선 게재한다. 저널 대표 콘텐츠로 <strong>Solar Cell Efficiency Tables</strong>가 있다. 셀 성능과 무관한 소재 개발, 일상적인 분석·특성 평가·모델링, 단순 시스템 성능 보고는 싣지 않는 편이다. 주 독자는 전기·전자공학자, 재생에너지 분야 과학자·엔지니어, 마이크로전자 엔지니어 등이다.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">2) 이용 방법 (Wiley Online Library)</h4>
+                <ol class="space-y-1 text-[#333333] pl-1">
+                  <li>① 저널 홈에서 Current Issue와 Early View(최종 편집을 마친 논문을 호 배정 전에 먼저 공개하는 것으로, DOI로 인용 가능함)를 확인한다.</li>
+                  <li>② 저널 홈에서 IF 및 JCR 분야별 순위를 열람 가능하다.</li>
+                  <li>③ 기본 검색 및 Advanced Search를 사용하며, 결과 화면에서 Save Search로 검색 조건을 저장 가능하다(계정 필요).</li>
+                  <li>④ 로그인 상태로 Get content alerts에서 새 호·Early View 알림 설정, Journal Tools에서 RSS 피드를 사용한다.</li>
+                  <li>⑤ 논문 페이지의 Tools 메뉴에서 Export Citation으로 인용 관리 프로그램에 저장하고, Track citation으로 해당 논문을 인용한 새 논문 알림을 수신한다.</li>
+                  <li>⑥ 검색 결과의 접근 아이콘으로 학교 구독·OA 논문인지 구분 가능하다.</li>
+                </ol>
+              </div>
+              <div class="border-t border-[#EEEEEE] pt-2 text-[13.5px]">
+                <strong>3) 활용 방안:</strong> 태양전지 최고 효율 기록과 효율표를 확인하기에 용이하며, 게재 기준이 까다로운 점은 고려할 필요가 있다.
+              </div>
+            </div>
+          </div>
+
+          <!-- Journal 5: Wind Energy Science -->
+          <div id="journal-5" data-category="renewable" class="journal-card s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>5. Wind Energy Science (WES)</span>
+              <a href="https://wes.copernicus.org" target="_blank" rel="noopener noreferrer" class="text-xs font-medium lib-link">
+                Copernicus Publications 바로가기 <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+              </a>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <div class="bg-[#F8F9FA] border border-[#E5E5E5] px-3 py-2 text-xs text-[#333333]">
+                <strong>발행처:</strong> 유럽풍력에너지학회(EAWE) / Copernicus Publications &nbsp;|&nbsp; <strong>창간:</strong> 2016년 &nbsp;|&nbsp; <strong>발행:</strong> 월 1호 &nbsp;|&nbsp; <strong>pISSN:</strong> 2366-7443 / <strong>eISSN:</strong> 2366-7451 &nbsp;|&nbsp; <strong>지표:</strong> 2025 JIF 4.2 &nbsp;|&nbsp; <strong>라이선스:</strong> 완전 OA(골드), CC BY 4.0
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">1) 소개</h4>
+                <p>풍력 분야의 기초·선도 연구, 리뷰, 논평을 싣는 OA 국제 학술지이다. 유럽풍력에너지학회에서 학계 네트워크를 바탕으로 운영한다. 주제 범위는 풍력 기술 발전에 기여하는 전 분야 대기 물리와 난류(바람과 대기), 유체역학(풍력터빈 공기역학, 후류, 공력음향, 수리역학), 동역학·제어(터빈·단지 제어), 재료·운영(구조역학, 피로, 수명 연장, 상태 감시·신뢰성), 전기 변환·계통 연계·Wind-to-X, 발전량 예측 및 시장 통합 등이다. 상호작용형 공개 동료심사(Interactive Public Peer Review)가 특징으로, 1단계로 신속 심사를 통과한 논문을 토론 사이트(WESD)에 선공개하고, 심사자 의견과 다른 연구자의 코멘트, 저자 답변까지 모두 공개한 다음 2단계에서 심사를 마무리해 최종본을 게재한다.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">2) 이용 방법</h4>
+                <ol class="space-y-1 text-[#333333] pl-1">
+                  <li>① 상단 메뉴: Articles &amp; preprints(Recent, Articles, Preprints, Grand Challenges, Special issues, Collections)로 구성된다.</li>
+                  <li>② Grand Challenges: 풍력 분야 연구 과제를 정리한 리뷰 논문 모음으로 분야 입문에 적합하다.</li>
+                  <li>③ 로그인, 구독 없이 전문(PDF, HTML)을 볼 수 있고, 논문 페이지에서 BibTeX·EndNote(RIS) 형식 인용정보를 내려받거나 Mendeley로 바로 보낼 수 있다.</li>
+                  <li>④ Preprints에서 심사 중 논문과 공개 심사 의견을 참고해 심사 과정과 논문의 약점을 파악 가능하다.</li>
+                  <li>⑤ Subscribe to alerts: 새 논문 알림 기능을 제공한다.</li>
+                  <li>⑥ 투고를 고려한다면 Policies 메뉴에서 라이선스·저작권, 출판 윤리, AI 정책, 데이터 정책을 확인한다.</li>
+                </ol>
+              </div>
+              <div class="border-t border-[#EEEEEE] pt-2 text-[13.5px]">
+                <strong>3) 활용 방향:</strong> 풍력 연구 전반에 대한 연구에 활용하며, 상호작용형 동료심사의 공개 토론을 통해 다양한 의견을 참고할 수 있다.
+              </div>
+            </div>
+          </div>
+
+          <!-- Journal 6: International Journal of Hydrogen Energy -->
+          <div id="journal-6" data-category="hydrogen" class="journal-card s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>6. International Journal of Hydrogen Energy (IJHE)</span>
+              <a href="https://www.sciencedirect.com/journal/international-journal-of-hydrogen-energy" target="_blank" rel="noopener noreferrer" class="text-xs font-medium lib-link">
+                ScienceDirect 바로가기 <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+              </a>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <div class="bg-[#F8F9FA] border border-[#E5E5E5] px-3 py-2 text-xs text-[#333333]">
+                <strong>발행처:</strong> Elsevier (국제수소에너지협회(IAHE) 공식 학술지) &nbsp;|&nbsp; <strong>창간:</strong> 1976년 &nbsp;|&nbsp; <strong>발행:</strong> 부정기 &nbsp;|&nbsp; <strong>pISSN:</strong> 0360-3199 / <strong>eISSN:</strong> 1879-3487 &nbsp;|&nbsp; <strong>지표:</strong> 2025 JIF 9.2
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">1) 소개</h4>
+                <p>수소에너지 분야 과학자·엔지니어의 아이디어, 기술, 연구 결과 교환을 목적으로 하는 학술지이다. 수소의 생산, 저장, 수송, 이용, 이를 가능하게 하는 기술, 환경 영향, 경제·국제 측면을 다루고, 암모니아·메탄·알코올 같은 수소 운반체도 포함한다. 이용 분야는 열화학(연소), 광화학, 전기화학(연료전지), 원자력 변환과 항공우주·수송·산업·가정 분야 응용까지 폭넓은 편이다. 수소 관련 논문이 가장 많이 실리는 저널 중 하나라 발행량이 많고 주제 폭이 넓다.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">2) 이용 방법 <span class="text-xs font-normal text-[#555555]">(* Elsevier 계열 저널은 ScienceDirect 저널 홈페이지에서 같은 이용 방식을 따름)</span></h4>
+                <ol class="space-y-1 text-[#333333] pl-1">
+                  <li>① 저널 홈 메뉴: 상단 Articles &amp; Issues(Latest issue, All issues, Articles in press, Special issues and article collections), About, Publish 메뉴 및 검색창이 존재한다.</li>
+                  <li>② 저널 정보 확인: About에서 Aims &amp; scope, 편집위원, IF 등의 저널 정보를 열람할 수 있다.</li>
+                  <li>③ Articles in press: 심사를 마쳤지만 아직 호에 배정되지 않은 논문으로, DOI로 인용 가능하다. 최신 연구 동향 확인 시 도움이 된다.</li>
+                  <li>④ 검색 결과 필터링: 논문 유형, 출판연도, 권·호, OA 필터를 제공한다.</li>
+                  <li>⑤ 복수 논문 처리: 논문 선택 후 Download PDFs로 한 번에 다운로드, Export citations로 RIS·BibTeX·텍스트 형식의 서지정보를 불러올 수 있으며, Mendeley, RefWorks 저장을 지원한다.</li>
+                  <li>⑥ 알림 설정: 계정 생성 후 저널 홈의 Articles &amp; Issues에서 Set up journal alerts 수신 시 새 호나 새 논문이 나올 때 알림을 수신한다. (Search alerts은 기관·단체 이용자용)</li>
+                  <li>⑦ 발행량이 매우 많으므로, 저널 내 검색에서 구체적인 키워드(예: electrolysis, PEM fuel cell, hydrogen storage)를 쓰고, 출판연도·논문 유형 필터로 범위를 좁힐 필요가 있다. 추가로, 리뷰 논문을 먼저 훑어 분야 흐름을 잡고, Articles in press로 최신 동향을 확인하는 것이 좋다.</li>
+                </ol>
+              </div>
+              <div class="border-t border-[#EEEEEE] pt-2 text-[13.5px]">
+                <strong>3) 활용 방안:</strong> 수소 생산·저장·연료전지 전반의 선행 연구를 찾는 기본 저널로, 발행량이 많은 만큼 인용 횟수와 최신성을 고려하여 선별에 유의할 필요가 있다.
+              </div>
+            </div>
+          </div>
+
+          <!-- Journal 7: Nuclear Engineering and Technology -->
+          <div id="journal-7" data-category="nuclear" class="journal-card s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>7. Nuclear Engineering and Technology (NET)</span>
+              <div class="flex items-center gap-3 text-xs font-medium">
+                <a href="https://www.sciencedirect.com/journal/nuclear-engineering-and-technology" target="_blank" rel="noopener noreferrer" class="lib-link">
+                  ScienceDirect <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+                </a>
+                <span class="text-[#CCCCCC]">|</span>
+                <a href="https://koreascience.kr/journal/OJRHBJ.page" target="_blank" rel="noopener noreferrer" class="lib-link">
+                  KoreaScience <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+                </a>
+              </div>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <div class="bg-[#F8F9FA] border border-[#E5E5E5] px-3 py-2 text-xs text-[#333333]">
+                <strong>발행처:</strong> 한국원자력학회(KNS), Elsevier 플랫폼 &nbsp;|&nbsp; <strong>창간:</strong> 1998년 &nbsp;|&nbsp; <strong>발행:</strong> 월 1호 &nbsp;|&nbsp; <strong>pISSN:</strong> 1738-5733 / <strong>eISSN:</strong> 2234-358X &nbsp;|&nbsp; <strong>지표:</strong> 2025 JIF 2.9, SCIE 등재, 핵과학기술 분야 Q1 &nbsp;|&nbsp; <strong>라이선스:</strong> 완전 OA(골드~다이아몬드: 기본 다이아몬드, 분량 8p 초과 시 초과 페이지당 추가 APC), CC BY +@ (저자 선택: 기본 CC BY-NC-ND)
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">1) 소개</h4>
+                <p>한국원자력학회 발행 국제 학술지로, 원자력과 방사선의 평화적 이용 전 분야의 원저논문, 리뷰, 기술노트를 발행한다. 주제 분야는 원자로 물리, 열수력, 원자력 안전, 원자력 계측제어, 원자핵 물리·핵융합·레이저 기술, 핵연료주기·방사성폐기물 관리, 핵연료·원자로 재료, 방사선 응용·방호, 구조해석·플랜트 관리·유지보수, 원자력 정책·경제·인력 양성의 영역을 포괄한다.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">2) 이용 방법 <span class="text-xs font-normal text-[#555555]">(* Elsevier 계열 저널은 ScienceDirect 저널 홈페이지에서 같은 이용 방식을 따름)</span></h4>
+                <ol class="space-y-1 text-[#333333] pl-1">
+                  <li>① 저널 홈 메뉴: 상단 Articles &amp; Issues(Latest issue, All issues, Articles in press, Special issues and article collections), About, Publish 메뉴 및 검색창이 존재한다.</li>
+                  <li>② 저널 정보 확인: About에서 Aims &amp; scope, 편집위원, IF 등의 저널 정보를 열람할 수 있다.</li>
+                  <li>③ Articles in press: 심사를 마쳤지만 아직 호에 배정되지 않은 논문으로, DOI로 인용 가능하다. 최신 연구 동향 확인 시 도움이 된다.</li>
+                  <li>④ 검색 결과 필터링: 논문 유형, 출판연도, 권·호, OA 필터를 제공한다.</li>
+                  <li>⑤ 복수 논문 처리: 논문 선택 후 Download PDFs로 한 번에 다운로드, Export citations로 RIS·BibTeX·텍스트 형식의 서지정보를 불러올 수 있으며, Mendeley, RefWorks 저장을 지원한다.</li>
+                  <li>⑥ 알림 설정: 계정 생성 후 저널 홈의 Articles &amp; Issues에서 Set up journal alerts 수신 시 새 호나 새 논문이 나올 때 알림을 수신한다. (Search alerts은 기관·단체 이용자용)</li>
+                  <li>⑦ OA 형식이므로 로그인 없이 논문 열람이 가능하며, 논문 사용 시 CC 라이선스에 유의해야 한다.</li>
+                  <li>⑧ 한국 학회 학술지이므로 KoreaScience에서도 권호별 목록을 확인할 수 있다.</li>
+                </ol>
+              </div>
+              <div class="border-t border-[#EEEEEE] pt-2 text-[13.5px]">
+                <strong>3) 활용 방향:</strong> 원자력 안전·열수력·방사성폐기물 분야 연구에서 완전 OA로 전문 열람이 자유롭고 사용 조건 역시 비교적 느슨하다.
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 3: 학술 DB & 서지관리도구 (Databases & Reference Tools)  -->
+        <!-- ========================================================= -->
+        <section id="tab-databases" class="tab-panel hidden">
+
+          <!-- Box 1: 온라인 데이터베이스 (7종) -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>1. 에너지공학 주요 온라인 학술 데이터베이스 (7종)</span>
+            </div>
+            <div class="s-lib-box-content space-y-4">
+              <p class="text-[#333333]">
+                경북대학교 도서관 전자정보 구독 및 국제 전문 데이터베이스를 통해 에너지공학 분야의 학술논문, 인용 현황, R&amp;D 보고서, 기술 표준 및 특허 정보를 검색할 수 있다.
+              </p>
+
+              <div class="divide-y divide-[#DDDDDD] border border-[#DDDDDD]">
+                <!-- Scopus -->
+                <div class="p-3.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <div>
+                      <a href="https://www.scopus.com" target="_blank" rel="noopener noreferrer" class="font-bold text-[15px] lib-link">Scopus</a>
+                      <span class="text-xs text-[#666666] ml-2">(Elsevier · 초록 및 인용 색인 데이터베이스)</span>
+                    </div>
+                    <a href="https://www.scopus.com" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">접속하기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                  </div>
+                  <p class="text-[#333333]">
+                    Scopus는 Elsevier에서 제공하는 세계적인 초록 및 인용 색인 데이터베이스이다. 다양한 학문 분야의 학술논문, 학술지, 학술대회 자료, 도서 등을 수록하고 있으며, 연구자의 논문 인용 현황과 연구 동향을 분석할 수 있다. 에너지공학 분야에선 <strong>신재생에너지, 수소에너지, 배터리, 탄소중립, 에너지 효율</strong> 등의 연구자료를 검색하는 데 유용하다.
+                  </p>
+                  <!-- 상세 검색 방법 접이식 -->
+                  <details class="mt-2 border-t border-[#EEEEEE] pt-2 text-xs">
+                    <summary class="font-bold text-lib-crimson focus:outline-none">▶ Scopus 상세 검색 및 활용 방법 열기</summary>
+                    <ol class="list-decimal pl-5 mt-1.5 space-y-1 text-[#444444]">
+                      <li><strong>검색 탭 선택:</strong> Document search(문서 검색) 탭을 기본 사용하며 필요시 Author, Affiliation, Advanced 탭을 활용합니다.</li>
+                      <li><strong>필드 지정:</strong> 검색어 입력 후 드롭다운에서 Article title, Abstract, Keywords 등을 선택하고 '+' 버튼으로 필드를 추가합니다.</li>
+                      <li><strong>불리언 연산자:</strong> AND, OR, NOT 연산자를 조합하여 정밀하게 검색 범위를 조정합니다.</li>
+                      <li><strong>검색 제한(Limits):</strong> 출판 기간(publication periods), 문서 유형(document types), 접근 유형(Open Access) 등을 설정해 필터링합니다.</li>
+                    </ol>
+                  </details>
+                </div>
+
+                <!-- Web of Science -->
+                <div class="p-3.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <div>
+                      <a href="https://www.webofscience.com" target="_blank" rel="noopener noreferrer" class="font-bold text-[15px] lib-link">Web of Science™</a>
+                      <span class="text-xs text-[#666666] ml-2">(Clarivate · 학술 인용 색인 데이터베이스)</span>
+                    </div>
+                    <a href="https://www.webofscience.com" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">접속하기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                  </div>
+                  <p class="text-[#333333]">
+                    Web of Science는 학술논문과 학술지의 인용 관계를 체계적으로 분석할 수 있는 학술 인용 색인 데이터베이스이다. 과학기술 분야의 연구자료를 폭넓게 제공하며, 에너지공학 분야에서는 <strong>Energy &amp; Fuels, Engineering, Materials Science</strong> 등의 주제 분류를 활용할 수 있다.
+                  </p>
+                  <!-- 상세 검색 방법 접이식 -->
+                  <details class="mt-2 border-t border-[#EEEEEE] pt-2 text-xs">
+                    <summary class="font-bold text-lib-crimson focus:outline-none">▶ Web of Science™ 상세 검색 및 활용 방법 열기</summary>
+                    <ol class="list-decimal pl-5 mt-1.5 space-y-1 text-[#444444]">
+                      <li><strong>검색 모드 및 DB 지정:</strong> '문서' 검색 모드에서 기관 구독 컬렉션(SCI-EXPANDED, SSCI, ESCI 등)을 선택합니다.</li>
+                      <li><strong>주요 필드 설정:</strong> Topic(제목+초록+키워드 통합), Title, Author, Affiliation 등을 지정합니다.</li>
+                      <li><strong>검색 연산자 활용:</strong> AND, OR, NOT 외 구문 검색(""), SAME(주소 연산), 와일드카드(*, $, ?), NEAR/#(단어 거리 검색)를 사용합니다.</li>
+                      <li><strong>결과 정렬 &amp; 분석:</strong> 인용 횟수(Citations), 최신순 정렬 및 좌측 필터로 연구 분야를 세분화합니다.</li>
+                    </ol>
+                  </details>
+                </div>
+
+                <!-- IAEA INIS -->
+                <div class="p-3.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <div>
+                      <a href="https://www.iaea.org/resources/databases/inis" target="_blank" rel="noopener noreferrer" class="font-bold text-[15px] lib-link">IAEA INIS</a>
+                      <span class="text-xs text-[#666666] ml-2">(국제원자력정보시스템 · 원자력 전문 데이터베이스)</span>
+                    </div>
+                    <a href="https://www.iaea.org/resources/databases/inis" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">접속하기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                  </div>
+                  <p class="text-[#333333]">
+                    IAEA INIS는 국제원자력정보시스템에서 제공하는 원자력 전문 데이터베이스이다. 전 세계 113개국과 19개 기관이 수집한 <strong>약 250만 건의 원자력 과학 기술 분야 문헌 초록</strong>을 제공한다. 학술지 논문, R&amp;D 보고서, 학술회의 발표 자료, 도서, 특허, 학위 논문 등 다양한 자료를 포괄한다.
+                  </p>
+                  <!-- 상세 검색 방법 접이식 -->
+                  <details class="mt-2 border-t border-[#EEEEEE] pt-2 text-xs">
+                    <summary class="font-bold text-lib-crimson focus:outline-none">▶ IAEA INIS 상세 검색 및 활용 방법 열기</summary>
+                    <ol class="list-decimal pl-5 mt-1.5 space-y-1 text-[#444444]">
+                      <li>INIS Repository 검색창에서 원자력 공학, 방사선 방호, 핵융합, 원자로 열수력 키워드를 검색합니다.</li>
+                      <li>Non-conventional literature (NCL: 비간행 기술보고서) 필터를 통해 일반 학술지에서 찾기 힘든 정부/연구소 기술 보고서 원문을 구합니다.</li>
+                    </ol>
+                  </details>
+                </div>
+
+                <!-- ScienceDirect -->
+                <div class="p-3.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <div>
+                      <a href="https://www.sciencedirect.com" target="_blank" rel="noopener noreferrer" class="font-bold text-[15px] lib-link">ScienceDirect</a>
+                      <span class="text-xs text-[#666666] ml-2">(Elsevier · 학술논문 및 전자책 플랫폼)</span>
+                    </div>
+                    <a href="https://www.sciencedirect.com" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">접속하기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                  </div>
+                  <p class="text-[#333333]">
+                    ScienceDirect는 Elsevier에서 제공하는 학술논문 및 전자책 플랫폼이다. 과학, 공학, 의학 등 다양한 분야의 동료심사 학술논문과 전문 서적을 제공한다. <strong>배터리 소재, 연료전지, 태양광 발전, 열역학, 에너지 변환 및 저장 기술</strong> 등의 전문적인 연구 자료를 찾을 수 있다.
+                  </p>
+                  <!-- 상세 검색 방법 접이식 -->
+                  <details class="mt-2 border-t border-[#EEEEEE] pt-2 text-xs">
+                    <summary class="font-bold text-lib-crimson focus:outline-none">▶ ScienceDirect 상세 검색 및 활용 방법 열기</summary>
+                    <ol class="list-decimal pl-5 mt-1.5 space-y-1 text-[#444444]">
+                      <li><strong>빠른 검색 &amp; 고급검색:</strong> 메인 상단 검색창 및 Advanced Search에서 저자, 저널명, 볼륨/페이지, ISSN 등을 지정합니다.</li>
+                      <li><strong>구문 및 불리언 조합:</strong> 큰따옴표("") 구문 검색과 AND, OR, NOT 연산자, 괄호를 활용해 검색 우선순위를 지정합니다. (영/미 철자 자동 확장 적용)</li>
+                      <li><strong>결과 검토 및 내보내기:</strong> 본문 수록 이미지 미리보기(Figures)와 Extracts를 확인하고, Download PDFs 및 Export citations(RIS/BibTeX)를 이용합니다.</li>
+                    </ol>
+                  </details>
+                </div>
+
+                <!-- Engineering Village (Compendex) -->
+                <div class="p-3.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <div>
+                      <a href="https://www.engineeringvillage.com" target="_blank" rel="noopener noreferrer" class="font-bold text-[15px] lib-link">Engineering Village (Compendex)</a>
+                      <span class="text-xs text-[#666666] ml-2">(Elsevier · 공학 분야 특화 학술정보 검색 플랫폼)</span>
+                    </div>
+                    <a href="https://www.engineeringvillage.com" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">접속하기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                  </div>
+                  <p class="text-[#333333]">
+                    Engineering Village는 공학 분야에 특화된 학술정보 검색 플랫폼이다. 대표 데이터베이스인 <strong>Compendex</strong>를 통해 공학 관련 학술지, 학술대회 논문, 학위논문, 기술 표준 및 특허 관련 정보를 검색할 수 있다. 기계, 전기, 화학, 재료 및 환경공학과 밀접하게 연관되어 있으므로 전문적인 공학 연구자료를 탐색하기에 적합하다.
+                  </p>
+                  <!-- 상세 검색 방법 접이식 -->
+                  <details class="mt-2 border-t border-[#EEEEEE] pt-2 text-xs">
+                    <summary class="font-bold text-lib-crimson focus:outline-none">▶ Engineering Village (Compendex) 상세 검색 및 활용 방법 열기</summary>
+                    <ol class="list-decimal pl-5 mt-1.5 space-y-1 text-[#444444]">
+                      <li><strong>DB 선택 및 자동제안:</strong> Compendex/Inspec 복수 DB 선택 후, EI 시소러스 기반의 키워드 자동 추천 기능을 활용합니다.</li>
+                      <li><strong>검색 필드 &amp; 제약 조건:</strong> 전체 필드 또는 특정 필드(Controlled Vocabulary 등)를 선택하고 연산자(AND, OR, NOT)로 정밀 검색식을 구성합니다.</li>
+                      <li><strong>카테고리 필터링:</strong> 문서 유형, 출판일, 저자 소속기관별 세부 필터링 및 검색식 저장·주간 이메일 알림 설정을 적용합니다.</li>
+                    </ol>
+                  </details>
+                </div>
+
+                <!-- OSTI.GOV -->
+                <div class="p-3.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <div>
+                      <a href="https://www.osti.gov" target="_blank" rel="noopener noreferrer" class="font-bold text-[15px] lib-link">OSTI.GOV</a>
+                      <span class="text-xs text-[#666666] ml-2">(Office of Scientific and Technical Information · 미국 에너지부(DOE) 전문 DB)</span>
+                    </div>
+                    <a href="https://www.osti.gov" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">접속하기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                  </div>
+                  <p class="text-[#333333]">
+                    OSTI.GOV는 미국 에너지부(DOE)가 지원한 과학기술 연구개발 성과를 검색할 수 있는 전문 정보 데이터베이스이다. 에너지 및 물리과학 분야의 <strong>연구논문, 기술 보고서, 연구 데이터, 특허, 학술대회 자료</strong> 등을 제공한다. 특히 에너지 분야의 정부 지원 연구성과와 기술 보고서를 찾는 데 유용하다.
+                  </p>
+                  <!-- 상세 검색 방법 접이식 -->
+                  <details class="mt-2 border-t border-[#EEEEEE] pt-2 text-xs">
+                    <summary class="font-bold text-lib-crimson focus:outline-none">▶ OSTI.GOV 상세 검색 및 활용 방법 열기</summary>
+                    <ol class="list-decimal pl-5 mt-1.5 space-y-1 text-[#444444]">
+                      <li><strong>상세 검색 옵션:</strong> 검색창 우측 드롭다운 및 'More Options'를 통해 제목, 저자 ORCID, 출판일, 연구 데이터 번호를 지정합니다.</li>
+                      <li><strong>필터링 및 내보내기:</strong> 자료 유형, 원문 공개 여부(Open Access)로 필터링하고 검색 결과 메타데이터를 CSV/Excel, XML, EndNote(RIS) 형식으로 다운로드합니다.</li>
+                      <li><strong>연관 연구 탐색:</strong> 레코드 하단 References 탭(피인용 문헌)과 Other Related Research 탭을 통해 연관 데이터셋을 함께 조사합니다.</li>
+                    </ol>
+                  </details>
+                </div>
+
+                <!-- KISS (신규 추가) -->
+                <div class="p-3.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <div>
+                      <a href="https://kiss.kstudy.com" target="_blank" rel="noopener noreferrer" class="font-bold text-[15px] lib-link">KISS (Koreanstudies Information Service System)</a>
+                      <span class="text-xs text-[#666666] ml-2">(한국학술정보 · 국내 학술논문 데이터베이스)</span>
+                    </div>
+                    <a href="https://kiss.kstudy.com" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">접속하기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                  </div>
+                  <p class="text-[#333333]">
+                    KISS는 한국학술정보에서 제공하는 국내 학술논문 검색 데이터베이스이다. 국내 학회 및 연구소에서 발행한 다양한 분야의 학술지와 논문을 검색할 수 있으며, 논문 초록과 서지정보 및 원문을 제공한다. 특히 국내 연구 동향과 학술적 논의를 파악하고, 연구 주제에 적합한 국내 선행연구를 찾는 데 유용하다.
+                  </p>
+                  <!-- 상세 검색 방법 접이식 -->
+                  <details class="mt-2 border-t border-[#EEEEEE] pt-2 text-xs">
+                    <summary class="font-bold text-lib-crimson focus:outline-none">▶ KISS 상세 검색 및 활용 방법 열기</summary>
+                    <ol class="list-decimal pl-5 mt-1.5 space-y-1 text-[#444444]">
+                      <li><strong>통합검색 &amp; 상세검색:</strong> 메인 검색창에 키워드를 입력하거나 상세검색 메뉴에서 키워드 조합(AND, OR, NOT 연산자)을 설정합니다.</li>
+                      <li><strong>결과 좁혀보기:</strong> 좌측 필터에서 주제 분야, 발행 연도, KCI 등재지 여부 등을 체크하여 필요한 선행연구를 우려냅니다.</li>
+                    </ol>
+                  </details>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 2: 서지관리도구 (Reference Tools) -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>2. 서지관리도구 (Reference Tools)</span>
+            </div>
+            <div class="s-lib-box-content space-y-4">
+              <div class="border border-[#DDDDDD] p-3.5">
+                <h4 class="font-bold text-[15px] text-[#222222] mb-1">EndNote <span class="text-xs font-normal text-[#666666]">(Clarivate · 데스크톱 및 클라우드 기반 서지 관리 소프트웨어)</span></h4>
+                <p class="text-[#333333]">
+                  클래리베이트(Clarivate)에서 제공하는 대표적인 데스크톱 및 클라우드 기반의 논문 작성 및 서지 관리 소프트웨어이다. 온라인 학술 데이터베이스에서 연구 자료와 PDF 원문을 한 번의 클릭으로 검색·수집하여 개인 라이브러리에 체계적으로 정리할 수 있다. 또한 <strong>7,000개 이상의 인용 스타일(APA, MLA, IEEE 등)</strong>을 지원하며, 워드(Word) 등과 연동해 본문 내 인용과 참고문헌 목록을 자동으로 생성해준다.
+                </p>
+                <!-- EndNote 세부 사용법 접이식 -->
+                <details class="mt-2 border-t border-[#EEEEEE] pt-2 text-xs">
+                  <summary class="font-bold text-lib-crimson focus:outline-none">▶ EndNote 세부 이용 및 워드 연동 방법 열기</summary>
+                  <ol class="list-decimal pl-5 mt-1.5 space-y-1 text-[#444444]">
+                    <li>EndNote 실행 후 <code class="bg-[#F5F5F5] px-1 border border-[#DDD]">File > New</code>로 개인 서지 라이브러리 파일(.enl)을 생성합니다.</li>
+                    <li>Web of Science, Scopus, KCI 등에서 검색한 레퍼런스를 반출(Export RIS)하거나 PDF를 바로 반입합니다.</li>
+                    <li>그룹 세트를 생성해 주제별 분류를 수행하고, <code class="bg-[#F5F5F5] px-1 border border-[#DDD]">Find Duplicates</code>로 중복 문헌을 정리합니다.</li>
+                    <li>MS Word의 EndNote 탭에서 <code class="bg-[#F5F5F5] px-1 border border-[#DDD]">Insert Citation</code>을 실행하여 본문 인용 및 참고문헌 목록을 자동 생성합니다. (Manuscript Matcher로 투고 적합 SCIE 저널 추천 가능)</li>
+                  </ol>
+                </details>
+              </div>
+
+              <div class="border border-[#DDDDDD] p-3.5">
+                <h4 class="font-bold text-[15px] text-[#222222] mb-1">Mendeley <span class="text-xs font-normal text-[#666666]">(Elsevier · 무료 서지 관리 및 학술 협업 프로그램)</span></h4>
+                <p class="text-[#333333]">
+                  Elsevier에서 제공하는 무료 서지 관리 및 학술 협업 프로그램으로, 논문 PDF와 참고문헌 데이터를 클라우드에 체계적으로 저장·관리할 수 있다. Microsoft Word와 연동되는 기능을 통해 본문 내 인용과 APA·MLA 등 다양한 학술 양식의 참고문헌 목록을 클릭 몇 번으로 자동 생성해 준다. 또한 <strong>온라인 그룹 기능</strong>을 통해 동료 연구자들과 문헌 라이브러리를 실시간으로 공유하며 효율적으로 공동 연구를 진행할 수 있다.
+                </p>
+                <!-- Mendeley 세부 사용법 접이식 -->
+                <details class="mt-2 border-t border-[#EEEEEE] pt-2 text-xs">
+                  <summary class="font-bold text-lib-crimson focus:outline-none">▶ Mendeley 세부 이용 및 Web Importer 활용 방법 열기</summary>
+                  <ol class="list-decimal pl-5 mt-1.5 space-y-1 text-[#444444]">
+                    <li>Mendeley Reference Manager 데스크톱/웹 버전과 크롬 Web Importer 확장 프로그램, Word용 Mendeley Cite 애드인을 설치합니다.</li>
+                    <li>학술 DB에서 Web Importer를 클릭해 논문 메타데이터와 PDF를 라이브러리로 수집합니다.</li>
+                    <li>내장 PDF 뷰어로 메모/하이라이트를 추가하고, 비공개 그룹(Private Group)을 생성해 동료 연구자와 라이브러리를 공유합니다.</li>
+                    <li>MS Word Mendeley Cite에서 원하는 인용 양식(IEEE, APA 등)을 고르고 <code class="bg-[#F5F5F5] px-1 border border-[#DDD]">Insert Bibliography</code>로 참고문헌 목록을 한 번에 삽입합니다.</li>
+                  </ol>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 4: 오픈액세스(OA) & CCL (Open Access & Copyright)       -->
+        <!-- ========================================================= -->
+        <section id="tab-oa" class="tab-panel hidden">
+
+          <!-- Box 1: 오픈액세스란? & 주요 유형 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>1. 오픈액세스(Open Access, OA)란? 및 주요 유형</span>
+            </div>
+            <div class="s-lib-box-content space-y-3">
+              <p>
+                <strong>오픈액세스(Open Access, OA)</strong>는 학술논문 등 연구성과를 인터넷을 통해 공개하여, 이용자가 비용 부담 없이 접근할 수 있도록 해 연구성과의 공유와 확산을 돕는다. 에너지공학 분야는 신재생에너지, 수소, 에너지 저장, 전력계통, 탄소 포집·활용·저장(CCUS) 등 기후변화와 에너지 전환과 밀접한 주제를 다루므로 연구 결과가 빠르게 공유되고 활용될수록 기술 발전과 정책 논의에 도움이 되기 때문에 오픈액세스의 중요성이 크다.
+              </p>
+              <p class="text-xs text-[#555555]">
+                * 재사용 범위는 저작권과 개별 논문에 적용된 이용허락 조건(CCL 등)에 따라 달라지므로, 논문을 활용하기 전에 반드시 해당 조건을 확인해야 한다.
+              </p>
+
+              <table class="lib-table mt-2">
+                <thead>
+                  <tr>
+                    <th class="w-48">오픈액세스 유형</th>
+                    <th>정의 및 운영 방식</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-bold">골드 오픈액세스<br><span class="text-xs font-normal text-[#555555]">(Gold OA)</span></td>
+                    <td>출판사가 논문을 공식 플랫폼에서 바로 오픈액세스로 공개하는 방식</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">그린 오픈액세스<br><span class="text-xs font-normal text-[#555555]">(Green OA)</span></td>
+                    <td>저자가 출판사 정책이 허용하는 범위 안에서, 논문 원고를 기관 리포지터리나 학술 저장소에 직접 공개하는 방식</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">하이브리드 오픈액세스<br><span class="text-xs font-normal text-[#555555]">(Hybrid OA)</span></td>
+                    <td>기본적으로는 구독형 학술지이지만, 일부 논문만 오픈액세스로 출판할 수 있게 하는 방식</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">다이아몬드 오픈액세스<br><span class="text-xs font-normal text-[#555555]">(Diamond OA)</span></td>
+                    <td>저자와 독자 모두에게 출판비·열람비를 받지 않는 방식</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Box 2: 크리에이티브 커먼즈 라이선스(CCL) -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>2. 크리에이티브 커먼즈 라이선스(CCL) 4대 조건 및 6가지 유형</span>
+            </div>
+            <div class="s-lib-box-content space-y-4">
+              <p>
+                <strong>크리에이티브 커먼즈 라이선스(Creative Commons License, CCL)</strong>는 저작권자에게 이용허가 요청 없이 조건만 만족시키면 이용 가능하게 하는 방식이다. CCL은 다음 네 가지 조건을 조합하여 6가지 라이선스로 구성된다.
+              </p>
+
+              <!-- 4 Conditions Table -->
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1.5">■ CCL 4가지 기본 조건</h4>
+                <table class="lib-table">
+                  <thead>
+                    <tr>
+                      <th class="w-44">조건</th>
+                      <th>의미</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-bold">BY (저작자 표시)</td>
+                      <td>원저작자와 출처를 반드시 표시해야 함</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">NC (비영리)</td>
+                      <td>영리 목적의 이용을 제한함</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">ND (변경 금지)</td>
+                      <td>수정·변형한 자료의 배포를 제한함</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">SA (동일조건변경허락)</td>
+                      <td>2차 저작물에도 동일한 라이선스를 적용해야 함</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 6 License Types Table -->
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1.5">■ CCL 라이선스 종류 6가지</h4>
+                <div class="overflow-x-auto">
+                  <table class="lib-table">
+                    <thead>
+                      <tr>
+                        <th class="w-52">라이선스 명칭</th>
+                        <th>허용 범위</th>
+                        <th>필수 조건 및 제한 사항</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="font-bold">CC BY<br><span class="text-xs font-normal text-[#555555]">(저작자표시)</span></td>
+                        <td>복사, 배포 가능 / 상업적 이용 가능 / 수정·2차 저작물 제작 가능</td>
+                        <td><strong>조건:</strong> 저작자와 출처만 표시하면 자유롭게 이용 가능</td>
+                      </tr>
+                      <tr>
+                        <td class="font-bold">CC BY-NC<br><span class="text-xs font-normal text-[#555555]">(저작자표시-비영리)</span></td>
+                        <td>복사, 배포 가능 / 수정·2차 저작물 제작 가능 / 2차 저작물의 라이선스는 자유롭게 선택 가능</td>
+                        <td><strong>제한:</strong> 상업적 이용 불가</td>
+                      </tr>
+                      <tr>
+                        <td class="font-bold">CC BY-ND<br><span class="text-xs font-normal text-[#555555]">(저작자표시-변경금지)</span></td>
+                        <td>복사·배포 가능 / 상업적 이용 가능</td>
+                        <td><strong>제한:</strong> 수정하거나 2차 저작물을 만들 수 없음</td>
+                      </tr>
+                      <tr>
+                        <td class="font-bold">CC BY-SA<br><span class="text-xs font-normal text-[#555555]">(저작자표시-동일조건변경허락)</span></td>
+                        <td>복사, 배포 가능 / 상업적 이용 가능 / 수정·2차 저작물 제작 가능</td>
+                        <td><strong>제한:</strong> 2차 저작물에도 원저작물과 동일한 라이선스를 적용해야 함</td>
+                      </tr>
+                      <tr>
+                        <td class="font-bold">CC BY-NC-SA<br><span class="text-xs font-normal text-[#555555]">(저작자표시-비영리-동일조건변경허락)</span></td>
+                        <td>복사, 배포 가능 / 수정·2차 저작물 제작 가능</td>
+                        <td><strong>제한:</strong> 상업적 이용 불가 + 2차 저작물에 동일한 라이선스 적용</td>
+                      </tr>
+                      <tr>
+                        <td class="font-bold">CC BY-NC-ND<br><span class="text-xs font-normal text-[#555555]">(저작자표시-비영리-변경금지)</span></td>
+                        <td>복사, 배포 가능</td>
+                        <td><strong>제한:</strong> 상업적 이용 불가 + 수정·2차 저작물 제작 불가 (6가지 중 가장 제한적인 라이선스)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 3: 에너지공학 주요 OA 학술지 및 검색 사이트 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>3. 에너지공학 주요 OA 학술지 CCL 사례 및 OA 논문 검색 사이트</span>
+            </div>
+            <div class="s-lib-box-content space-y-4">
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1.5">■ 에너지공학 주요 OA 학술지와 CCL 적용 사례</h4>
+                <table class="lib-table">
+                  <thead>
+                    <tr>
+                      <th>학술지</th>
+                      <th>출판사</th>
+                      <th>OA 방식</th>
+                      <th>주요 CCL</th>
+                      <th>비고</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-bold">Energies</td>
+                      <td>MDPI</td>
+                      <td>전체 OA</td>
+                      <td>CC BY 4.0</td>
+                      <td>가장 개방적. 상업적 이용·수정 가능</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">Energy Reports</td>
+                      <td>Elsevier</td>
+                      <td>전체 OA</td>
+                      <td>CC BY / CC BY-NC / CC BY-NC-ND 선택</td>
+                      <td>논문마다 라이선스 확인 필요</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">Energy Science &amp; Engineering</td>
+                      <td>Wiley</td>
+                      <td>전체 OA</td>
+                      <td>기본 CC BY (예외 가능)</td>
+                      <td>연구비 지원기관 조건에 따라 달라질 수 있음</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1.5">■ 에너지공학 OA 논문 검색에 활용할 수 있는 주요 사이트</h4>
+                <table class="lib-table">
+                  <thead>
+                    <tr>
+                      <th class="w-40">사이트</th>
+                      <th>특징</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-bold"><a href="https://www.osti.gov" target="_blank" rel="noopener noreferrer" class="lib-link">OSTI.GOV</a></td>
+                      <td>미국 에너지부(DOE) 지원 연구성과 검색 (수소, 원자력, 에너지 저장, CCUS 등)</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold"><a href="https://www.osti.gov/pages/" target="_blank" rel="noopener noreferrer" class="lib-link">DOE PAGES</a></td>
+                      <td>미국 에너지부 지원 연구의 공개 논문</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold"><a href="https://arxiv.org" target="_blank" rel="noopener noreferrer" class="lib-link">arXiv</a></td>
+                      <td>에너지 시스템 모델링, 전력망 최적화 등 preprint 다수</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold"><a href="https://engrxiv.org" target="_blank" rel="noopener noreferrer" class="lib-link">engrXiv</a></td>
+                      <td>공학 전용 preprint 서버. 기본 라이선스 CC BY 4.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 5: 인용 양식 & 연구윤리·생성형 AI (Citation & Ethics)   -->
+        <!-- ========================================================= -->
+        <section id="tab-citation" class="tab-panel hidden">
+
+          <!-- Box 1: 에너지공학 주제 분야 인용 양식 가이드 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>1. 에너지공학 주제 분야 인용 양식 가이드 (IEEE · APA 7판 · Harvard)</span>
+            </div>
+            <div class="s-lib-box-content space-y-4">
+              <p>
+                학술 논문이나 전공 보고서를 작성할 때는 타인의 연구 결과, 실험 데이터, 수식, 도표를 정확한 규칙에 따라 인용해야 한다. 에너지공학은 전기·전자, 기계, 화학·소재, 환경·정책이 융합된 다학제적 분야이므로 연구 주제와 투고 학술지에 따라 적합한 인용 양식을 선택해야 한다. 특히 전력공학과 에너지 시스템 분야에서는 <strong>IEEE Power &amp; Energy Society(PES)</strong>가 중요한 역할을 담당하며, 대표 학술지로 <em>IEEE Transactions on Power Systems</em>와 <em>IEEE Transactions on Sustainable Energy</em> 등이 있다.
+              </p>
+
+              <!-- ① 주요 인용 양식 비교 -->
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1.5">① 에너지공학 주요 인용 양식 비교</h4>
+                <div class="overflow-x-auto">
+                  <table class="lib-table">
+                    <thead>
+                      <tr>
+                        <th>인용 양식</th>
+                        <th>본문 표기 방식</th>
+                        <th>참고문헌 정렬 순서</th>
+                        <th>주로 활용되는 세부 분야</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="font-bold">IEEE 스타일</td>
+                        <td class="font-mono text-xs">번호 표기식 ([1], [2])</td>
+                        <td>본문에 인용된 순서대로 번호 부여</td>
+                        <td>전력계통, 스마트그리드, 신재생에너지 발전, 제어·시스템 공학</td>
+                      </tr>
+                      <tr>
+                        <td class="font-bold">APA 7판 스타일</td>
+                        <td class="font-mono text-xs">저자-연도식 ((Kim, 2024))</td>
+                        <td>저자 성(Last name)의 알파벳·가나다순</td>
+                        <td>에너지 정책, 탄소중립 경제성 평가, 대학 일반 리포트</td>
+                      </tr>
+                      <tr>
+                        <td class="font-bold">Harvard 스타일</td>
+                        <td class="font-mono text-xs">저자-연도식 ((Kim 2024))</td>
+                        <td>저자 성(Last name)의 알파벳순</td>
+                        <td>유럽권 국제 에너지·환경 학술지 (<em>Energy Policy</em> 등 일부 저널)</td>
+                      </tr>
+                      <tr>
+                        <td class="font-bold">ACS / Elsevier</td>
+                        <td class="font-mono text-xs">번호 표기식 ([1] 또는 위첨자 <sup>1</sup>)</td>
+                        <td>본문에 인용된 순서대로 번호 부여</td>
+                        <td>이차전지, 수소 연료전지, 촉매, 에너지 소재·화학공학</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- ② IEEE 스타일 작성법 및 예시 -->
+              <div class="space-y-2">
+                <h4 class="font-bold text-[#222222]">② 공학 분야 표준: IEEE 스타일 작성법 및 예시</h4>
+                <ul class="list-disc pl-5 space-y-1 text-[#333333]">
+                  <li><strong>본문 내 인용 규칙:</strong> 문장 끝(마침표 앞)에 대괄호와 숫자를 넣어 표기한다. 동일 문헌을 뒤에서 다시 인용할 때도 처음 부여받은 번호([1])를 그대로 쓰며, 여러 문헌을 동시에 인용할 때는 <code class="bg-[#F2F2F2] px-1 border border-[#DDDDDD] text-xs">[1], [2]</code> 또는 <code class="bg-[#F2F2F2] px-1 border border-[#DDDDDD] text-xs">[1]-[3]</code> 형태로 표기한다.</li>
+                  <li><strong>자료 유형별 참고문헌(References) 작성 규칙:</strong> 저자 이름(이니셜+성), "논문 제목," 학술지 약어명, 권(vol.), 호(no.), 페이지(pp.), 발행월 연도, DOI 순으로 작성하며, 투고 시 각 학술지의 저자 지침(Author Guidelines) 및 IEEE PES 공식 Author's Kit을 우선 확인한다.</li>
+                </ul>
+
+                <div class="border-l-[3px] border-lib-crimson bg-[#F8F9FA] p-3.5 space-y-2.5 text-xs">
+                  <div>
+                    <div class="flex justify-between items-center mb-1">
+                      <span class="font-bold text-[#222222]">• 본문 인용 예시</span>
+                      <button onclick="copyTextById('ieee-in-text')" class="lib-link">[복사]</button>
+                    </div>
+                    <p id="ieee-in-text" class="font-mono text-[#222222]">에너지 저장 기술은 재생에너지의 간헐성을 보완하고 전력 공급의 안정성을 높이는 데 중요한 역할을 한다 [1].</p>
+                  </div>
+                  <div class="border-t border-[#E5E5E5] pt-2">
+                    <div class="flex justify-between items-center mb-1">
+                      <span class="font-bold text-[#222222]">• IEEE 참고문헌 작성 예시 (에너지공학 분야 적용)</span>
+                      <button onclick="copyTextById('ieee-ref-list')" class="lib-link">[전체 복사]</button>
+                    </div>
+                    <div id="ieee-ref-list" class="font-mono text-[#222222] space-y-1.5 leading-relaxed">
+                      <p><strong>학술지 논문:</strong> [1] J. Kim and S. Park, "Performance optimization of solid oxide fuel cells for hydrogen power generation," IEEE Trans. Energy Convers., vol. 39, no. 2, pp. 112-120, Jun. 2024, doi: 10.1109/TEC.2024.000000.</p>
+                      <p><strong>학술대회 발표논문:</strong> [2] H. Lee, "Grid integration of offshore wind farms using high-voltage direct current," in Proc. IEEE Power &amp; Energy Soc. Gen. Meeting (PESGM), Seattle, WA, USA, Jul. 2024, pp. 1-5.</p>
+                      <p><strong>전공서적 / 단행본:</strong> [3] G. M. Masters, Renewable and Efficient Electric Power Systems, 2nd ed. Hoboken, NJ, USA: Wiley, 2013.</p>
+                      <p><strong>기관 보고서 및 에너지 통계:</strong> [4] International Energy Agency (IEA), "World Energy Outlook 2025," Paris, France, Oct. 2025.</p>
+                      <p><strong>웹페이지 자료:</strong> [5] Korea Energy Agency, "New &amp; Renewable Energy Statistics." Accessed: Nov. 10, 2026. [Online]. Available: https://www.energy.or.kr</p>
+                    </div>
+                    <p class="text-[11px] text-[#666666] mt-1.5">※ 위 예시는 IEEE 형식의 구조를 보여주기 위한 가상 예시이며, 실제 논문을 인용한 것이 아니다.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ③ 융합·정책 분야 표준: APA 7판 및 Harvard 스타일 -->
+              <div class="space-y-2">
+                <h4 class="font-bold text-[#222222]">③ 융합·정책 분야 표준: APA 7판 및 Harvard 스타일</h4>
+                <ul class="list-disc pl-5 space-y-1 text-[#333333]">
+                  <li><strong>APA 7판 스타일 (미국심리학회 양식):</strong> 본문 괄호 안에 저자의 성과 발행연도를 쉼표로 구분해 표기한다. 예: <code class="bg-[#F2F2F2] px-1 border border-[#DDDDDD] text-xs">(Kim &amp; Park, 2024)</code> / 저자 3인 이상 시 <code class="bg-[#F2F2F2] px-1 border border-[#DDDDDD] text-xs">(Kim et al., 2024)</code></li>
+                  <li><strong>Harvard 스타일 (하버드 양식):</strong> APA와 유사하나 본문 인용 시 저자와 연도 사이에 쉼표를 생략하는 것이 특징이다. 예: <code class="bg-[#F2F2F2] px-1 border border-[#DDDDDD] text-xs">(Kim &amp; Park 2024)</code></li>
+                </ul>
+                <div class="border-l-[3px] border-[#666666] bg-[#F8F9FA] p-3.5 space-y-2 text-xs">
+                  <div>
+                    <div class="flex justify-between items-center">
+                      <span class="font-bold text-[#222222]">• APA 7판 예시</span>
+                      <button onclick="copyTextById('apa-ref-ex')" class="lib-link">[복사]</button>
+                    </div>
+                    <p id="apa-ref-ex" class="font-mono text-[#222222] mt-0.5">Kim, J., &amp; Park, S. (2024). Performance optimization of solid oxide fuel cells for hydrogen power generation. IEEE Transactions on Energy Conversion, 39(2), 112-120. https://doi.org/10.1109/TEC.2024.000000</p>
+                  </div>
+                  <div class="border-t border-[#E5E5E5] pt-2">
+                    <div class="flex justify-between items-center">
+                      <span class="font-bold text-[#222222]">• Harvard 예시</span>
+                      <button onclick="copyTextById('harvard-ref-ex')" class="lib-link">[복사]</button>
+                    </div>
+                    <p id="harvard-ref-ex" class="font-mono text-[#222222] mt-0.5">Kim, J. and Park, S. 2024, 'Performance optimization of solid oxide fuel cells for hydrogen power generation', IEEE Transactions on Energy Conversion, vol. 39, no. 2, pp. 112-120.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ④ 서지관리도구 자동 변환 방법 -->
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">④ 서지관리도구를 활용한 인용 양식 자동 변환 방법</h4>
+                <p class="mb-1.5">경북대학교 도서관에서 지원하는 서지관리도구(EndNote, Mendeley 등)를 활용하면 수십 편의 참고문헌 양식을 수작업으로 수정할 필요 없이 클릭 한 번으로 자동 변환할 수 있다.</p>
+                <ol class="list-decimal pl-5 space-y-1 text-[#333333]">
+                  <li><strong>1단계 (서지 정보 반출):</strong> ScienceDirect, IEEE Xplore 등 학술 DB에서 논문을 찾은 뒤 'Export Citation(인용 내보내기)' 기능을 이용해 RIS 또는 BibTeX 형식으로 저장한다.</li>
+                  <li><strong>2단계 (인용 스타일 선택):</strong> EndNote 또는 Mendeley의 스타일 메뉴에서 투고 목적에 맞게 'IEEE', 'APA 7th', 'Harvard' 중 하나를 선택한다.</li>
+                  <li><strong>3단계 (본문 및 참고문헌 자동 생성):</strong> MS Word 플러그인을 연동하면 본문 인용 번호와 문서 끝의 참고문헌 목록이 실시간으로 자동 정렬·생성된다.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 2: 연구 윤리 및 표절 예방 가이드 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>2. 연구 윤리 및 표절 예방 가이드</span>
+            </div>
+            <div class="s-lib-box-content space-y-4">
+              <p>연구 윤리는 학문적 진실성을 지키고 타인의 지식재산권을 존중하기 위해 연구자와 대학생 모두가 반드시 준수해야 할 기본 원칙이다.</p>
+
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1.5">① 4대 연구부정행위와 에너지공학 연구 사례</h4>
+                <table class="lib-table">
+                  <thead>
+                    <tr>
+                      <th class="w-44">연구부정행위 유형</th>
+                      <th>정의 및 에너지공학 분야 사례</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-bold">1. 위조 (Fabrication)</td>
+                      <td>실제로 수행하지 않은 배터리 충·방전 수명 실험이나 태양전지 광전변환효율 데이터를 허위로 만들어내는 행위이다.</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">2. 변조 (Falsification)</td>
+                      <td>실험 장비의 측정 오차를 임의로 조작하거나, 가설과 맞지 않는 이상치(Outlier) 데이터를 무단 삭제하여 그래프 추세를 왜곡하는 행위이다.</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">3. 표절 (Plagiarism)</td>
+                      <td>타인의 아이디어, 연구 설계, 수식, 문장, 시뮬레이션 코드(MATLAB·Python), 도표를 적절한 출처 표기 없이 자신의 것처럼 사용하는 행위이다.<br><span class="text-lib-crimson font-medium">※ 자기표절 주의: 과거 다른 강의에 제출했던 본인의 리포트나 설계 보고서 내용을 출처 표기 없이 새 과제에 그대로 재사용하는 것도 자기표절에 해당한다.</span></td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">4. 부당한 저자 표시<br><span class="text-xs font-normal text-[#555555]">(Improper Authorship)</span></td>
+                      <td>실험·분석·작성에 실질적인 학술적 기여를 하지 않은 사람을 공동 저자로 올리거나, 정당하게 기여한 팀원을 저자에서 제외하는 행위이다.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">② 공학 전공생을 위한 올바른 인용·표절 예방 수칙</h4>
+                <ul class="list-disc pl-5 space-y-1 text-[#333333]">
+                  <li><strong>원문 확인 원칙:</strong> 다른 논문에 인용된 수치를 재인용(2차 인용)하기보다 가급적 최초 원문(Primary Source)을 직접 찾아 확인하고 인용한다.</li>
+                  <li><strong>말바꿔쓰기 (Paraphrasing):</strong> 원문 문장을 그대로 복사·붙여넣기(Copy &amp; Paste)하지 않고, 내용을 완전히 이해한 뒤 자신의 문장으로 재구성하고 반드시 출처를 밝힌다.</li>
+                  <li><strong>도표·수식 출처 명시:</strong> 타 논문이나 기관 보고서의 계통도, 공정도, 실험 그래프를 과제에 발췌할 경우 그림 하단 캡션에 원출처(예: 출처: IEA, World Energy Outlook, 2025)를 명확히 적는다.</li>
+                  <li><strong>도서관 표절 예방 서비스 활용:</strong> 과제 및 학위논문 제출 전, 경북대학교 도서관 홈페이지에서 무료로 제공하는 <strong>카피킬러(CopyKiller) 또는 턴잇인(Turnitin)</strong> 서비스를 이용해 유사도 검사를 사전 진행한다.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 3: 생성형 AI 활용 윤리 및 인용 가이드 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>3. 생성형 AI(Generative AI) 활용 윤리 및 인용 가이드</span>
+            </div>
+            <div class="s-lib-box-content space-y-4">
+              <p>ChatGPT, Gemini, Claude 등 생성형 AI가 연구와 학습에 널리 활용됨에 따라, 국제 학술계(IEEE, Elsevier 등)와 주요 대학에서는 AI 활용에 대한 엄격한 윤리 가이드라인을 적용하고 있다.</p>
+
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1">① 국제 학술계(IEEE · Elsevier)의 4대 핵심 원칙</h4>
+                <ul class="list-disc pl-5 space-y-1 text-[#333333]">
+                  <li><strong>저자 자격 불인정 (No AI Authorship):</strong> 생성형 AI는 연구 결과의 정확성과 진실성에 대해 법적·윤리적 책임을 질 수 없으므로 논문이나 보고서의 공동 저자가 될 수 없다.</li>
+                  <li><strong>활용 사실의 투명한 공개 (Transparency &amp; Disclosure):</strong> 문장 교정, 영문 번역, 코드 디버깅, 자료 구조화 등에 AI를 사용했다면 보고서 내 '연구 방법' 또는 '사사(Acknowledgment)' 항목에 사용한 AI 도구명과 활용 목적을 투명하게 밝혀야 한다.</li>
+                  <li><strong>환각(Hallucination) 검증 책임:</strong> 생성형 AI는 존재하지 않는 가짜 논문 제목을 지어내거나, 에너지 변환 효율 수치·물리 상수·법령 조항을 왜곡해 출력할 수 있다. 원문 교차 검증 없이 AI 출력을 그대로 인용해 발생한 오류의 책임은 전적으로 작성자 본인에게 있다.</li>
+                  <li><strong>연구 보안 및 기밀 유지 (Confidentiality):</strong> 미공개 실험 데이터, 특허 출원 전 기술 아이디어, 산학협력 기업의 기밀 자료, 개인정보를 외부 생성형 AI 프롬프트에 입력해서는 안 된다.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-[#222222] mb-1.5">② 대학생 과제 작성 시 허용 범위 vs. 부정행위 기준</h4>
+                <table class="lib-table">
+                  <thead>
+                    <tr>
+                      <th class="w-28">구분</th>
+                      <th>권장 및 허용되는 활용 (보조 도구)</th>
+                      <th>엄격히 금지되는 부정행위</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-bold">문헌 조사</td>
+                      <td>생소한 에너지 공학 용어의 개념 이해, 검색 키워드 아이디어 도출</td>
+                      <td>AI가 알려준 참고문헌 목록을 실제 원문 확인 없이 그대로 기재</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">글쓰기·번역</td>
+                      <td>본인이 직접 작성한 초안의 문법 교정, 영문 초록 번역, 문단 가독성 개선</td>
+                      <td>과제 주제만 입력한 뒤 AI가 생성한 본문을 통째로 복사하여 제출</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">데이터·코드</td>
+                      <td>데이터 시각화용 Python·MATLAB 코드의 문법 오류(디버깅) 수정</td>
+                      <td>실험 데이터의 해석, 고찰, 최종 결론 도출을 AI에게 전적으로 의존</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="space-y-2">
+                <h4 class="font-bold text-[#222222]">③ 생성형 AI 출처 표기 및 활용 명시 예시</h4>
+                <div class="border-l-[3px] border-lib-crimson bg-[#F8F9FA] p-3.5 space-y-2.5 text-xs">
+                  <div>
+                    <div class="flex justify-between items-center">
+                      <span class="font-bold text-[#222222]">• APA 7판 참고문헌 표기 형식: 개발사. (연도). AI 모델명 (버전 날짜) [Large language model]. URL</span>
+                      <button onclick="copyTextById('ai-apa-cite')" class="lib-link">[복사]</button>
+                    </div>
+                    <p id="ai-apa-cite" class="font-mono text-[#222222] mt-0.5">OpenAI. (2026). ChatGPT (Nov 15 version) [Large language model]. https://chat.openai.com</p>
+                    <p class="text-[#555555] mt-0.5">본문 내 인용: (OpenAI, 2026)</p>
+                  </div>
+                  <div class="border-t border-[#E5E5E5] pt-2">
+                    <div class="flex justify-between items-center">
+                      <span class="font-bold text-[#222222]">• 보고서·연구가이드 내 활용 명시 문구 예시 (IEEE 권고 스타일)</span>
+                      <button onclick="copyTextById('ai-disclosure-stmt')" class="lib-link">[복사]</button>
+                    </div>
+                    <p id="ai-disclosure-stmt" class="font-mono text-[#222222] mt-0.5 leading-relaxed">"본 연구가이드의 초안 구조화 및 문장 교정 과정에서 생성형 AI(ChatGPT/Gemini)를 보조 도구로 활용하였으며, 수록된 모든 인용 양식과 학술 정보는 작성자가 공식 가이드라인 및 원문을 통해 최종 검증하였다."</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 6: 추천 학습 영상 (Curated Educational Videos - 5선)    -->
+        <!-- ========================================================= -->
+        <section id="tab-videos" class="tab-panel hidden">
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>에너지공학 핵심 원리 이해를 위한 추천 학습 영상 (5개 주제)</span>
+            </div>
+            <div class="s-lib-box-content space-y-5">
+              <p class="text-[#333333]">
+                에너지공학의 주요 분야(핵융합, 핵분열, 수소에너지, 태양광에너지, 전고체 배터리)의 기초 원리와 최신 기술 동향을 학습할 수 있는 추천 영상 자료이다.
+              </p>
+
+              <!-- Video 1: 핵융합 -->
+              <div class="border border-[#DDDDDD] p-4">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                  <div class="md:col-span-5 aspect-video bg-black border border-[#CCCCCC]">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/htvxKBdh7Y8" title="1) 핵융합 에너지 원리" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                  </div>
+                  <div class="md:col-span-7 space-y-2">
+                    <h3 class="font-bold text-[15px] text-[#222222]">
+                      1) 핵융합 : <a href="https://www.youtube.com/watch?v=htvxKBdh7Y8" target="_blank" rel="noopener noreferrer" class="lib-link font-normal text-xs">https://www.youtube.com/watch?v=htvxKBdh7Y8 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </h3>
+                    <p class="text-[#333333]">
+                      핵융합의 기본 원리와 과학적 과정을 설명하는 영상이다. 수소와 같은 가벼운 원자핵을 고온·고압 조건에서 충돌시켜 헬륨으로 합치는 과정에서 막대한 에너지가 방출된다는 점을 다루며, 핵분열과의 차이도 함께 소개한다. 온실가스를 배출하지 않고 부산물이 헬륨뿐이라는 장점을 강조하며, 지속 가능한 에너지원으로서의 가능성을 설명한다. 또한 핵융합 에너지를 실제 전력망에 연결하고 상용화하기 위한 현재의 기술 개발과 연구 노력도 다루고 있다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video 2: 핵분열 1편 & 2편 -->
+              <div class="border border-[#DDDDDD] p-4">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                  <div class="md:col-span-5 aspect-video bg-black border border-[#CCCCCC]">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/8FzgMB8ePiM" title="2) 핵분열 1편" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                  </div>
+                  <div class="md:col-span-7 space-y-2">
+                    <h3 class="font-bold text-[15px] text-[#222222]">
+                      2) 핵분열 1편 · 핵분열 2편
+                    </h3>
+                    <div class="text-xs space-y-0.5">
+                      <div>• 핵분열 1편: <a href="https://www.youtube.com/watch?v=8FzgMB8ePiM" target="_blank" rel="noopener noreferrer" class="lib-link">https://www.youtube.com/watch?v=8FzgMB8ePiM <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a></div>
+                      <div>• 핵분열 2편: <a href="https://www.youtube.com/watch?v=91yb2k950lY" target="_blank" rel="noopener noreferrer" class="lib-link">https://www.youtube.com/watch?v=91yb2k950lY <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a></div>
+                    </div>
+                    <p class="text-[#333333]">
+                      원자력 발전의 기본적인 물리학적 원리와 우라늄 원자의 핵분열을 통한 연쇄 반응 과정을 설명한다. 또한 핵분열 과정에서 발생하는 열에너지를 전기에너지로 변환하는 원자력 발전소의 작동 원리를 소개한다. 특히 방사성 물질의 외부 유출을 방지하는 데 중요한 역할을 하는 1차·2차·3차 순환 계통의 구조와 각 계통의 기능을 살펴보고 있다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video 3: 수소에너지 -->
+              <div class="border border-[#DDDDDD] p-4">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                  <div class="md:col-span-5 aspect-video bg-black border border-[#CCCCCC]">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/_eL6tNSAvcI" title="3) 수소에너지" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                  </div>
+                  <div class="md:col-span-7 space-y-2">
+                    <h3 class="font-bold text-[15px] text-[#222222]">
+                      3) 수소에너지 : <a href="https://www.youtube.com/watch?v=_eL6tNSAvcI" target="_blank" rel="noopener noreferrer" class="lib-link font-normal text-xs">https://www.youtube.com/watch?v=_eL6tNSAvcI <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </h3>
+                    <p class="text-[#333333]">
+                      물의 전기분해를 통해 수소를 생산하는 원리와 청정 전력을 활용한 저탄소 수소 생산 과정을 설명한다. 또한 수소가 운송 및 산업 분야의 탄소 배출 저감과 재생에너지의 저장·활용에 어떻게 기여할 수 있는지 소개한다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video 4: 태양광에너지 -->
+              <div class="border border-[#DDDDDD] p-4">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                  <div class="md:col-span-5 aspect-video bg-black border border-[#CCCCCC]">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/0elhIcPVtKE" title="4) 태양광에너지" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                  </div>
+                  <div class="md:col-span-7 space-y-2">
+                    <h3 class="font-bold text-[15px] text-[#222222]">
+                      4) 태양광에너지 : <a href="https://www.youtube.com/watch?v=0elhIcPVtKE" target="_blank" rel="noopener noreferrer" class="lib-link font-normal text-xs">https://www.youtube.com/watch?v=0elhIcPVtKE <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </h3>
+                    <p class="text-[#333333]">
+                      태양광 발전(PV) 패널이 태양 에너지를 전기로 변환하는 과학적 원리를 설명하고 있다. 햇빛이 비치는 곳이라면 어디서나 가정과 기업에 경제적인 전력을 공급하는 발전 구조와 오염물질과 소음이 없고 화석 연료를 사용하지 않는 친환경 에너지원으로서의 장점에 대해 설명한다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video 5: 전고체 배터리 -->
+              <div class="border border-[#DDDDDD] p-4">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                  <div class="md:col-span-5 aspect-video bg-black border border-[#CCCCCC]">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/aO_GoxIwUF8" title="5) 전고체 배터리" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                  </div>
+                  <div class="md:col-span-7 space-y-2">
+                    <h3 class="font-bold text-[15px] text-[#222222]">
+                      5) 전고체 배터리 : <a href="https://www.youtube.com/watch?v=aO_GoxIwUF8" target="_blank" rel="noopener noreferrer" class="lib-link font-normal text-xs">https://www.youtube.com/watch?v=aO_GoxIwUF8 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </h3>
+                    <p class="text-[#333333]">
+                      전고체 배터리의 기본 개념과 전통적인 리튬이온 배터리와의 구조적 차이를 설명한다. 전기차 주행거리 확대 및 자율주행 구현을 위해 전고체 배터리가 필요한 이유와 높은 안전성과 에너지 밀도 등 차세대 배터리로서의 장점에 대해 설명한다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- TAB 7: 학회·워크샵·연구기관·통계 (Organizations & Data)     -->
+        <!-- ========================================================= -->
+        <section id="tab-orgs" class="tab-panel hidden">
+
+          <!-- Box 1: 학회 및 학술 단체 (해외 · 국내) -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>1. 학회 및 학술 단체 (해외 · 국내)</span>
+            </div>
+            <div class="s-lib-box-content space-y-4">
+              <p class="text-[#333333]">
+                에너지 분야의 학술 발전과 최신 정보 교환, 연구자 간 커뮤니티 형성을 지원하는 대표적인 국내외 학술 단체 모음이다.
+              </p>
+
+              <!-- 해외 학회 -->
+              <div>
+                <h4 class="font-bold text-[#222222] mb-2 flex items-center gap-1.5 border-b border-[#EEEEEE] pb-1">
+                  <i class="fa-solid fa-globe text-lib-crimson text-xs"></i> 해외 학 학술 단체
+                </h4>
+                <div class="space-y-3">
+                  <div class="border border-[#DDDDDD] p-3.5 bg-[#F8F9FA]">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <div class="font-bold text-[14.5px] text-[#222222]">
+                        국제에너지경제학회 (IAEE, International Association for Energy Economics)
+                      </div>
+                      <a href="https://iaee.org" target="_blank" rel="noopener noreferrer" class="text-xs lib-link font-medium">
+                        공식 홈페이지 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                      </a>
+                    </div>
+                    <p class="text-xs text-[#333333] leading-relaxed">
+                      에너지 자원의 생산과 이용, 에너지 시장 및 에너지 정책을 경제학적 관점에서 연구하는 대표적 국제 학술단체이다. 공식 학술지로 <em>The Energy Journal</em>과 <em>Economics of Energy &amp; Environmental Policy</em>를 발행하며, 에너지 가격, 에너지 시장 분석, 환경 경제 관련 연구자료 탐색 시 활용도가 높다.
+                    </p>
+                    <div class="mt-2 text-xs bg-white border border-[#E5E5E5] p-2 text-[#555555]">
+                      <strong>이용 방법:</strong> IAEE 홈페이지의 Publications 메뉴에서 학술지 검색을 제공한다. <em>The Energy Journal</em> 검색 페이지에서 논문 제목, 저자, 키워드, DOI 등으로원하는 원문을 조회할 수 있다.
+                    </div>
+                  </div>
+
+                  <div class="border border-[#DDDDDD] p-3.5 bg-[#F8F9FA]">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <div class="font-bold text-[14.5px] text-[#222222]">
+                        국제전기전자기술자협회 전력에너지학회 (IEEE PES, IEEE Power &amp; Energy Society)
+                      </div>
+                      <a href="https://ieee-pes.org" target="_blank" rel="noopener noreferrer" class="text-xs lib-link font-medium">
+                        공식 홈페이지 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                      </a>
+                    </div>
+                    <p class="text-xs text-[#333333] leading-relaxed">
+                      전력공학 및 에너지 시스템 분야의 기술 발전과 연구 교류를 담당하는 세계 최대 학술단체이다. 전력계통, 전력변환, 스마트그리드, ESS 및 지속가능한 전력 기술 관련 학술지(<em>IEEE Transactions on Power Systems</em> 등)와 국제 학술대회를 주관한다.
+                    </p>
+                    <div class="mt-2 text-xs bg-white border border-[#E5E5E5] p-2 text-[#555555]">
+                      <strong>이용 방법:</strong> Publications 메뉴 확인 후 IEEE Xplore 디지털 라이브러리에서 스마트그리드, 전력계통, 전력변환 키워드로 검색하여 관련 논문을 열람할 수 있다.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 국내 학회 -->
+              <div>
+                <h4 class="font-bold text-[#222222] mb-2 flex items-center gap-1.5 border-b border-[#EEEEEE] pb-1">
+                  <i class="fa-solid fa-flag text-lib-crimson text-xs"></i> 국내 학술 단체
+                </h4>
+                <div class="space-y-3">
+                  <div class="border border-[#DDDDDD] p-3.5 bg-[#F8F9FA]">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <div class="font-bold text-[14.5px] text-[#222222]">
+                        (사)한국에너지학회 (Korean Energy Society, KES)
+                      </div>
+                      <a href="https://www.koes.or.kr" target="_blank" rel="noopener noreferrer" class="text-xs lib-link font-medium">
+                        공식 홈페이지 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                      </a>
+                    </div>
+                    <p class="text-xs text-[#333333] leading-relaxed">
+                      에너지 분야 학문과 기술의 연구·개발 촉진을 목적으로 하는 국내 학술단체이다. 에너지 정책, 에너지 효율, 신재생에너지 및 에너지 시스템 전반의 논문과 학술발표회 자료를 다룬다.
+                    </p>
+                    <div class="mt-2 text-xs bg-white border border-[#E5E5E5] p-2 text-[#555555]">
+                      <strong>이용 방법:</strong> 홈페이지 학술지 메뉴의 논문검색에서 에너지 효율, 신재생, 에너지 정책 등의 키워드로 국내 선행연구 원문을 열람할 수 있다.
+                    </div>
+                  </div>
+
+                  <div class="border border-[#DDDDDD] p-3.5 bg-[#F8F9FA]">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <div class="font-bold text-[14.5px] text-[#222222]">
+                        (사)한국수소및신에너지학회 (The Korean Hydrogen and New Energy Society, KHNES)
+                      </div>
+                      <a href="https://hydrogen.or.kr/" target="_blank" rel="noopener noreferrer" class="text-xs lib-link font-medium">
+                        공식 홈페이지 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                      </a>
+                    </div>
+                    <p class="text-xs text-[#333333] leading-relaxed">
+                      수소에너지 생산·저장·운송, 연료전지, 청정수소 및 신에너지 응용 기술의 개발과 학술교류를 전담하는 국내 핵심 학회이다.
+                    </p>
+                    <div class="mt-2 text-xs bg-white border border-[#E5E5E5] p-2 text-[#555555]">
+                      <strong>이용 방법:</strong> 학술지 메뉴에서 수전해, 수소 저장, 연료전지, 이차전지 등 세부 분야 키워드로 논문 검색 및 학술행사 자료실을 활용한다.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Box 2: 주요 학술회의(학회) 및 학술 워크숍 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>2. 주요 학술회의(학회) 및 학술 워크숍</span>
+            </div>
+            <div class="s-lib-box-content space-y-4">
+
+              <!-- 주요 국제·국내 학술회의 (Conference) -->
+              <div>
+                <h4 class="font-bold text-[#222222] mb-2 border-b border-[#EEEEEE] pb-1">■ 주요 국제·국내 학술회의 (Conferences)</h4>
+                <div class="space-y-3">
+                  <div class="border border-[#DDDDDD] p-3.5">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <span class="font-bold text-[14.5px] text-[#222222]">1. ICAE (International Conference on Applied Energy)</span>
+                      <a href="https://applied-energy.org/icae2026/" target="_blank" rel="noopener noreferrer" class="text-xs lib-link font-medium">ICAE 2026 공식 사이트 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                    <p class="text-xs text-[#555555] mb-1">
+                      <strong>주최:</strong> Applied Energy Innovative Institute | <strong>개최 예시:</strong> 제18회 ICAE2026 (2026년 9월 22~26일, 제주 ICC JEJU)
+                    </p>
+                    <p class="text-xs text-[#333333] leading-relaxed">
+                      응용 에너지 전 분야를 다루는 대규모 국제 학술대회이다. 2026년 주제는 "AI와 에너지의 상호 관계(AI for Energy, Energy for AI)"이다. 채택 논문은 <em>Energy Proceedings</em>(OA)에 등재되며, 우수 논문은 <em>Applied Energy</em>, <em>Advances in Applied Energy</em>, <em>Energy 360</em> 등 주요 저널 특별호에 추천된다.
+                    </p>
+                    <p class="text-xs text-[#666666] mt-1.5">
+                      ※ 지난 논문은 Energy-proceedings.org(2019~현재) 및 ScienceDirect Energy Procedia(2014~2018)에서 열람 가능하다.
+                    </p>
+                  </div>
+
+                  <div class="border border-[#DDDDDD] p-3.5">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <span class="font-bold text-[14.5px] text-[#222222]">2. 한국신·재생에너지학회 학술대회 (KSNRE Conference)</span>
+                      <a href="https://conference.ksnre.or.kr" target="_blank" rel="noopener noreferrer" class="text-xs lib-link font-medium">학술대회 사이트 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                    <p class="text-xs text-[#555555] mb-1">
+                      <strong>주최:</strong> 한국신·재생에너지학회 (2004년 설립) | <strong>개최 예시:</strong> 2026년 춘계학술대회 (2026년 5월 27~29일, 파라다이스호텔 부산)
+                    </p>
+                    <p class="text-xs text-[#333333] leading-relaxed">
+                      태양광, 풍력, 수소/연료전지, 바이오, 해양, ESS/Grid, CCUS, 제로에너지 등 신재생 분야 국내 최대 산·학·연 학술대회이다. 디지틀 전환과 AI 기반 신재생 시스템 혁신을 주제로 한 기조강연 및 구두·포스터 세션을 운영한다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 주요 해외 워크숍 -->
+              <div>
+                <h4 class="font-bold text-[#222222] mb-2 border-b border-[#EEEEEE] pb-1">■ 주요 해외 학술 워크숍 (Overseas Workshops)</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div class="border border-[#DDDDDD] p-3 bg-[#F8F9FA] space-y-1 text-xs">
+                    <div class="flex justify-between items-start">
+                      <strong class="text-[#222222] text-[13.5px]">Wind &amp; Solar Integration Workshop (WIW)</strong>
+                      <a href="https://windintegrationworkshop.org" target="_blank" rel="noopener noreferrer" class="lib-link">사이트 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
+                    </div>
+                    <p class="text-[#555555]">주최: Energynautics GmbH (제25회: 포르투갈 포르투)</p>
+                    <p class="text-[#333333]">대규모 풍력·태양광의 전력계통 통합, 그리드 포밍(Grid-Forming), 수소 연계, 계통 안정성 전문 워크숍. 프로시딩은 IET Digital Library 및 IEEE Xplore에 등재됨.</p>
+                  </div>
+
+                  <div class="border border-[#DDDDDD] p-3 bg-[#F8F9FA] space-y-1 text-xs">
+                    <div class="flex justify-between items-start">
+                      <strong class="text-[#222222] text-[13.5px]">ESIG Technical Workshop</strong>
+                      <a href="https://www.esig.energy" target="_blank" rel="noopener noreferrer" class="lib-link">사이트 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
+                    </div>
+                    <p class="text-[#555555]">주최: Energy Systems Integration Group (비영리)</p>
+                    <p class="text-[#333333]">전력망 현대화, 신재생계통 통합, 신뢰도 과제를 다루는 기술 커뮤니티 워크숍. Resources 메뉴에서 지난 워크숍 패널 발표자료 열람 가능.</p>
+                  </div>
+
+                  <div class="border border-[#DDDDDD] p-3 bg-[#F8F9FA] space-y-1 text-xs">
+                    <div class="flex justify-between items-start">
+                      <strong class="text-[#222222] text-[13.5px]">International Energy Workshop (IEW)</strong>
+                      <a href="https://www.internationalenergyworkshop.org/" target="_blank" rel="noopener noreferrer" class="lib-link">사이트 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
+                    </div>
+                    <p class="text-[#555555]">주최: IEW Steering Committee</p>
+                    <p class="text-[#333333]">에너지 수급·가격 전망, 에너지 경제 모델링, 기후변화 대응 분야 세계 연구자들이 참여하는 대표적 국제 모델링 워크숍.</p>
+                  </div>
+
+                  <div class="border border-[#DDDDDD] p-3 bg-[#F8F9FA] space-y-1 text-xs">
+                    <div class="flex justify-between items-start">
+                      <strong class="text-[#222222] text-[13.5px]">IEA-IETA-EPRI GHG Trading Workshop</strong>
+                      <a href="https://www.iea.org/events/26th-annual-iea-ieta-epri-workshop-on-greenhouse-gas-emissions-trading" target="_blank" rel="noopener noreferrer" class="lib-link">사이트 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
+                    </div>
+                    <p class="text-[#555555]">주최: IEA, IETA, EPRI</p>
+                    <p class="text-[#333333]">온실가스 배출권거래제(ETS), 탄소시장, 탄소가격제 정책 및 연구 결과를 공유하는 연례 전문 워크숍.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 주요 국내 워크숍 -->
+              <div>
+                <h4 class="font-bold text-[#222222] mb-2 border-b border-[#EEEEEE] pb-1">■ 주요 국내 학술 워크숍 (Domestic Workshops)</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div class="border border-[#DDDDDD] p-3 space-y-1 text-xs">
+                    <div class="flex justify-between items-start">
+                      <strong class="text-[#222222] text-[13.5px]">한국수소및신에너지학회 동계·하계 워크숍</strong>
+                      <a href="https://hydrogen.or.kr/" target="_blank" rel="noopener noreferrer" class="lib-link">사이트 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
+                    </div>
+                    <p class="text-[#333333]">수소 생산·저장, 연료전지, 청정수소 핵심 기술 및 연구성과 전문가 집중 공유 세션 운영.</p>
+                  </div>
+
+                  <div class="border border-[#DDDDDD] p-3 space-y-1 text-xs">
+                    <div class="flex justify-between items-start">
+                      <strong class="text-[#222222] text-[13.5px]">대한전기학회 산업전기응용부문회 춘계 기술위원회 워크숍</strong>
+                      <a href="https://www.kiee.or.kr/" target="_blank" rel="noopener noreferrer" class="lib-link">사이트 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
+                    </div>
+                    <p class="text-[#333333]">산업전기 기술, 다종에너지 응용, 스마트도시 인프라, 무선전력전송 최신 동향을 다룸.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Box 3: 에너지 관련 주요 연구기관 (해외 · 국내) -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>3. 에너지 관련 주요 연구기관 (해외 · 국내)</span>
+            </div>
+            <div class="s-lib-box-content space-y-4">
+              <p class="text-[#333333]">
+                에너지 기술의 원천 연구, 실증 및 산업화를 견인하는 국공립 및 정부출연 연구기관 안내이다.
+              </p>
+
+              <!-- 해외 연구기관 -->
+              <div>
+                <h4 class="font-bold text-[#222222] mb-2 flex items-center gap-1.5 border-b border-[#EEEEEE] pb-1">
+                  <i class="fa-solid fa-building-columns text-lib-crimson text-xs"></i> 해외 주요 연구기관
+                </h4>
+                <div class="space-y-3">
+                  <div class="border border-[#DDDDDD] p-3.5 bg-[#F8F9FA]">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <span class="font-bold text-[14.5px] text-[#222222]">일본 산업기술종합연구소 (AIST)</span>
+                      <a href="https://www.aist.go.jp/aist_e/" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">공식 홈페이지 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                    <p class="text-xs text-[#333333]">
+                      일본 대표 국립 산업기술 연구기관으로, 신재생에너지(태양광·풍력·지열), 차세대 배터리, 수소 저장 및 탄소중립 기술 연구개발을 담당한다.
+                      <br><span class="text-[#666666]">이용법: Research Results 메뉴에서 영문 키워드로 최신 연구성과 리포트를 탐색한다.</span>
+                    </p>
+                  </div>
+
+                  <div class="border border-[#DDDDDD] p-3.5 bg-[#F8F9FA]">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <span class="font-bold text-[14.5px] text-[#222222]">독일 프라운호퍼 태양에너지시스템연구소 (Fraunhofer ISE)</span>
+                      <a href="https://www.ise.fraunhofer.de/en.html" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">공식 홈페이지 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                    <p class="text-xs text-[#333333]">
+                      유럽 최대 태양에너지 연구기관으로 태양광 발전, 전력전자, ESS, 수소 기술 및 건물 에너지 효율화를 전문으로 연구한다.
+                      <br><span class="text-[#666666]">이용법: Publications 메뉴 및 Fraunhofer Publica DB를 이용해 기술보고서 및 학술자료를 검색한다.</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 국내 연구기관 -->
+              <div>
+                <h4 class="font-bold text-[#222222] mb-2 flex items-center gap-1.5 border-b border-[#EEEEEE] pb-1">
+                  <i class="fa-solid fa-landmark text-lib-crimson text-xs"></i> 국내 정부출연 연구기관
+                </h4>
+                <div class="space-y-3">
+                  <div class="border border-[#DDDDDD] p-3.5 bg-[#F8F9FA]">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <span class="font-bold text-[14.5px] text-[#222222]">한국에너지기술연구원 (KIER)</span>
+                      <a href="https://www.kier.re.kr/" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">공식 홈페이지 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                    <p class="text-xs text-[#333333]">
+                      국내 에너지 기술 R&amp;D를 총괄하는 정부출연연구기관으로, 에너지 효율, 신재생, 수소, CCUS, 청정에너지 융복합 성과를 창출한다.
+                      <br><span class="text-[#666666]">이용법: 연구성과 메뉴에서 관심 기술 소식 및 기관 발행 보고서 메타데이터를 열람한다.</span>
+                    </p>
+                  </div>
+
+                  <div class="border border-[#DDDDDD] p-3.5 bg-[#F8F9FA]">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <span class="font-bold text-[14.5px] text-[#222222]">한국전기연구원 (KERI)</span>
+                      <a href="https://www.keri.re.kr/" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">공식 홈페이지 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                    <p class="text-xs text-[#333333]">
+                      전력망, 스마트그리드, 전력반도체, 이차전지, 전기모빌리티 전반의 연구개발 및 시험·인증을 수행하는 전문 연구기관이다.
+                      <br><span class="text-[#666666]">이용법: 연구 분야 메뉴에서 전력 시스템 및 전기 에너지 최신 동향 자료를 확인한다.</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Box 4: 국내외 에너지 통계 및 참고정보원 -->
+          <div class="s-lib-box searchable-block">
+            <div class="s-lib-box-title">
+              <span>4. 국내외 에너지 통계 및 참고정보원</span>
+            </div>
+            <div class="s-lib-box-content space-y-4">
+              <p class="text-[#333333]">
+                에너지 수급, 생산·소비, 국가 R&amp;D 과제 및 통계 데이터를 분석할 수 있는 권위 있는 국내외 전문 데이터 통계원이다.
+              </p>
+
+              <div class="divide-y divide-[#DDDDDD] border border-[#DDDDDD]">
+                <!-- IEA Data & Statistics -->
+                <div class="p-3.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <div>
+                      <span class="font-bold text-[15px] text-[#222222]">IEA Data and Statistics</span>
+                      <span class="text-xs text-[#666666] ml-2">(국제에너지기구)</span>
+                    </div>
+                    <a href="https://www.iea.org/data-and-statistics" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">IEA Data 바로가기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                  </div>
+                  <p class="text-xs text-[#333333] leading-relaxed">
+                    IEA가 직접 수집·검증하는 국제 공인 에너지 수급 통계(Energy Balances)이다. 170개 이상의 국가/지역 및 16개 주제 차트를 제공하는 <strong>Energy Statistics Data Browser</strong>와 무료 데이터세트(World Energy Outlook dataset, 수소 프로젝트 DB, EV Outlook 2026 등)를 제공한다.
+                  </p>
+                  <p class="text-xs text-[#666666] mt-1">
+                    <strong>이용 팁:</strong> Data explorers 영역에서 월간 전력 통계를 확인하고, Unit Converter 도구로 에너지·질량·부피 단위를 교환할 수 있다.
+                  </p>
+                </div>
+
+                <!-- IRENA Statistics -->
+                <div class="p-3.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <div>
+                      <span class="font-bold text-[15px] text-[#222222]">IRENA Renewable Energy Statistics</span>
+                      <span class="text-xs text-[#666666] ml-2">(국제재생에너지기구)</span>
+                    </div>
+                    <a href="https://www.irena.org/Data" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">IRENA Data 바로가기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                  </div>
+                  <p class="text-xs text-[#333333] leading-relaxed">
+                    전 세계 재생에너지(태양광, 풍력, 수력 등) 발전설비 용량(Capacity) 및 발전량(Generation) 통계를 전담 수집해 분석하는 국제 통계 DB이다.
+                  </p>
+                  <p class="text-xs text-[#666666] mt-1">
+                    <strong>이용 팁:</strong> Download Query Tools를 통해 국가별, 연도별, 기술 유형별 데이터를 엑셀 등으로 내려받을 수 있다.
+                  </p>
+                </div>
+
+                <!-- KESIS -->
+                <div class="p-3.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <div>
+                      <span class="font-bold text-[15px] text-[#222222]">KESIS (국가에너지통계종합정보시스템)</span>
+                      <span class="text-xs text-[#666666] ml-2">(한국에너지경제연구원 KEEI)</span>
+                    </div>
+                    <a href="https://kesis.keei.re.kr" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">KESIS 바로가기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                  </div>
+                  <p class="text-xs text-[#333333] leading-relaxed">
+                    정부 승인통계 작성 기관인 KEEI가 직접 운영하며, 국내 에너지 수급통계, 에너지 밸런스, 월보/연보, 열량환산계수 데이터를 종합 제공한다.
+                  </p>
+                  <p class="text-xs text-[#666666] mt-1">
+                    <strong>이용 팁:</strong> 통계목록 > 국가에너지수급통계 및 주요지표 탐색이 가능하며, 열량환산계수는 에너지법에 따라 5년 주기로 개정되므로 시계열 비교 시 유의한다.
+                  </p>
+                </div>
+
+                <!-- NTIS -->
+                <div class="p-3.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <div>
+                      <span class="font-bold text-[15px] text-[#222222]">NTIS (국가과학기술지식정보서비스)</span>
+                      <span class="text-xs text-[#666666] ml-2">(국가 R&amp;D 통합 포털)</span>
+                    </div>
+                    <a href="https://www.ntis.go.kr" target="_blank" rel="noopener noreferrer" class="text-xs lib-link">NTIS 바로가기 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                  </div>
+                  <p class="text-xs text-[#333333] leading-relaxed">
+                    국가 연구개발사업(R&amp;D 과제, 연구비, 연구책임자, 장비 및 성과)에 대한 정보가 결합된 종합 포털이다. 수소, ESS, 원자력 등 정부 지원 과제 현황을 조사하는 데 최적화되어 있다.
+                  </p>
+                  <p class="text-xs text-[#666666] mt-1">
+                    <strong>이용 팁:</strong> 통합검색에서 기술 키워드 입력 후 과제 수행기관, 연구 기간, 정부 부처별 예산 투입 추이를 다각도로 분석할 수 있다.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+
+      <!-- Right Sidebar Column (3 of 12 cols = 25% - Authentic LibGuides Sidebar Boxes) -->
+      <aside class="lg:col-span-3">
+
+        <!-- Box: 주제 가이드 및 접속 안내 -->
+        <div class="s-lib-box">
+          <div class="s-lib-box-title">
+            <span>주제 가이드 안내</span>
+          </div>
+          <div class="s-lib-box-content text-xs space-y-2.5">
+            <div>
+              <div class="font-bold text-sm text-[#222222]">경북대학교 도서관</div>
+              <div class="text-[#555555]">학술정보지원 · 에너지공학부</div>
+            </div>
+            <p class="text-[#333333] border-t border-[#EEEEEE] pt-2">
+              교외에서 전자저널 및 학술 데이터베이스 원문을 열람할 때는 <strong>경북대 도서관 홈페이지 로그인(학술DB 교외접속)</strong>을 먼저 진행해 주시기 바랍니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Box: 관련 기관 및 도서관 바로가기 -->
+        <div class="s-lib-box">
+          <div class="s-lib-box-title">
+            <span>관련 사이트 바로가기</span>
+          </div>
+          <div class="s-lib-box-content text-xs">
+            <ul class="space-y-2">
+              <li>
+                <a href="https://kudos.knu.ac.kr/" target="_blank" rel="noopener noreferrer" class="lib-link flex items-center justify-between">
+                  <span>• 경북대학교 도서관 (KUDOS)</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://libguides.knu.ac.kr/c.php?g=808458&p=6781390" target="_blank" rel="noopener noreferrer" class="lib-link flex items-center justify-between">
+                  <span>• 에너지공학부 공식 주제가이드</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://home.knu.ac.kr/HOME/soee/sub.htm?nav_code=soe1622693389" target="_blank" rel="noopener noreferrer" class="lib-link flex items-center justify-between">
+                  <span>• 경북대학교 에너지공학부</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://kudos.knu.ac.kr/" target="_blank" rel="noopener noreferrer" class="lib-link flex items-center justify-between">
+                  <span>• 표절예방 (CopyKiller·Turnitin)</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.cre.re.kr/" target="_blank" rel="noopener noreferrer" class="lib-link flex items-center justify-between">
+                  <span>• 연구윤리정보포털 (CRE)</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Box: 가이드 목차 (On This Guide) -->
+        <div class="s-lib-box">
+          <div class="s-lib-box-title">
+            <span>가이드 목차 (Contents)</span>
+          </div>
+          <div class="s-lib-box-content text-xs">
+            <ul class="space-y-1.5">
+              <li><button onclick="switchTab('tab-home')" class="lib-link text-left">1. 홈 / 에너지공학 주제 개요</button></li>
+              <li><button onclick="switchTab('tab-journals')" class="lib-link text-left">2. 핵심 전자저널 (7종)</button></li>
+              <li><button onclick="switchTab('tab-databases')" class="lib-link text-left">3. 학술 DB (7종) &amp; 서지관리도구</button></li>
+              <li><button onclick="switchTab('tab-oa')" class="lib-link text-left">4. 오픈액세스(OA) &amp; CCL</button></li>
+              <li><button onclick="switchTab('tab-citation')" class="lib-link text-left">5. 인용 양식 &amp; 연구윤리·AI</button></li>
+              <li><button onclick="switchTab('tab-videos')" class="lib-link text-left">6. 추천 학습 영상 (5선)</button></li>
+              <li><button onclick="switchTab('tab-orgs')" class="lib-link text-left">7. 학회·워크샵·연구기관·통계</button></li>
+            </ul>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+
+  <!-- 5. Classic LibGuides Minimal Footer -->
+  <footer class="border-t border-[#DDDDDD] bg-[#F8F8F8] text-[#555555] text-xs py-4 mt-8">
+    <div class="max-w-[1170px] mx-auto px-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+      <div>
+        <span>Last Updated: Nov 2026</span>
+        <span class="mx-2 text-[#CCCCCC]">|</span>
+        <span>경북대학교 도서관 · 에너지공학(Energy Engineering) 주제 가이드</span>
+      </div>
+      <div>
+        <span>Powered by KNU Library Subject Guide</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // 1. Main Tab Navigation Logic
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+      const targetPanel = document.getElementById(tabId);
+      if (targetPanel) {
+        targetPanel.classList.remove('hidden');
+      }
+
+      document.querySelectorAll('.lib-tab-btn').forEach(btn => {
+        if (btn.getAttribute('data-tab') === tabId) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 2. Journal Sub-field Filtering
+    function filterJournals(category) {
+      document.querySelectorAll('.j-filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.classList.remove('bg-[#F5F5F5]', 'text-[#222222]');
+          btn.classList.add('bg-[#222222]', 'text-white');
+        } else {
+          btn.classList.remove('bg-[#222222]', 'text-white');
+          btn.classList.add('bg-[#F5F5F5]', 'text-[#222222]');
+        }
+      });
+
+      document.querySelectorAll('.journal-card').forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Helper when clicking journal name in summary table
+    function openJournalDetail(journalId) {
+      filterJournals('all');
+      setTimeout(() => {
+        const el = document.getElementById(journalId);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 30);
+    }
+
+    // 3. One-click Clipboard Copy (Using document.execCommand for iframe compatibility)
+    function copyTextById(elementId) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      const textToCopy = el.innerText.trim();
+
+      const tempTextarea = document.createElement('textarea');
+      tempTextarea.value = textToCopy;
+      tempTextarea.style.position = 'fixed';
+      tempTextarea.style.left = '-9999px';
+      document.body.appendChild(tempTextarea);
+      tempTextarea.select();
+
+      try {
+        document.execCommand('copy');
+        showToast('클립보드에 복사되었습니다.');
+      } catch (err) {
+        showToast('복사에 실패했습니다. 직접 드래그하여 복사해 주세요.');
+      }
+      document.body.removeChild(tempTextarea);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      toastMsg.textContent = message;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2200);
+    }
+
+    // 4. Global Guide Keyword Search across all tabs
+    const searchInput = document.getElementById('global-search');
+    const clearBtn = document.getElementById('clear-search');
+    const searchStatus = document.getElementById('search-status');
+    const searchStatusText = document.getElementById('search-status-text');
+
+    searchInput.addEventListener('input', function () {
+      const query = this.value.trim().toLowerCase();
+      if (query.length === 0) {
+        resetSearch();
+        return;
+      }
+
+      clearBtn.classList.remove('hidden');
+      let matchCount = 0;
+
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.remove('hidden');
+      });
+
+      document.querySelectorAll('.lib-tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      document.querySelectorAll('.searchable-block').forEach(block => {
+        const text = block.innerText.toLowerCase();
+        if (text.includes(query)) {
+          block.classList.remove('hidden');
+          matchCount++;
+        } else {
+          block.classList.add('hidden');
+        }
+      });
+
+      searchStatus.classList.remove('hidden');
+      searchStatusText.textContent = `'${this.value}' 검색 결과: ${matchCount}개 섹션 일치`;
+    });
+
+    clearBtn.addEventListener('click', function () {
+      searchInput.value = '';
+      resetSearch();
+    });
+
+    function resetSearch() {
+      searchInput.value = '';
+      clearBtn.classList.add('hidden');
+      searchStatus.classList.add('hidden');
+      document.querySelectorAll('.searchable-block').forEach(block => {
+        block.classList.remove('hidden');
+      });
+      switchTab('tab-home');
+    }
+  </script>
+</body>
+</html>
